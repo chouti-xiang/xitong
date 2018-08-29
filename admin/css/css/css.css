@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+body {font-size: 12px;font-family:"微软雅黑", Arial, Verdana, Tahoma,  Helvetica, sans-serif;padding:0px;margin:0px;}
+.yahei{font-family:Microsoft Yahei}
+
+/*格式化样式*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,{margin:0;padding:0;} 
+ul li,ul{list-style:none; padding:0; margin:0}
+img{border:none;}
+input{outline:none}
+a:link { text-decoration:none;outline:none}/* 链接基本样式 */
+a:visited {text-decoration:none;}/* 链接点击过后的样式 */
+a:hover { text-decoration:none;}/* 链接移上时的样式 */
+a:active {text-decoration:none;}/* 链接点击时的样式 */
+
+td,tr,table,input,select,textarea {font-size: 12px;font-family:"微软雅黑"}
+
+input,select,textarea{border:#ccc 1px solid;/*padding:5px;*/}
+
+.nav a:hover{color:#FEFB00;}
+
+.nav_app a:hover{color:#FEFB00;}
+
+.new{ width:244px; border:solid 1px #dddddd; background:#ffffff; float:left; height:256px;}
+
+.new_content span{ display:block; width:236px; height:90px; text-align:center; float:left; margin-top:20px; padding-top:5px; border-bottom:solid 1px #eaeaea}
+.new_list ul li{line-height:23px; padding-left:8px;}
+.new_list a{color:#666}
+.new_list a:hover{color:#1A98E5; text-decoration:underline}
+.buttonclass1{border:none; background:#0099cc;color:white;padding:5px;text-align:center;font-family:微软雅黑;}
+
+.huodong_content{border-bottom:dashed 1px #c0c0c0;}
+.huodong_list ul li{line-height:35px; padding:0px 15px; width:720px; height:35px; margin-left:15px;border-bottom:solid 1px #eaeaea}
+.huodonga_list ul li{line-height:23px; padding:0px 15px;margin-left:5px;}
+.huodonga_list a{color:#666}
+.huodonga_list a:hover{color:#1A98E5; text-decoration:underline}
+
+.huodongaa_list ul li{line-height:23px; padding:0px 15px;margin-left:5px;width:438px;height:23px;}
+.huodongaa_list a{color:#666}
+.huodongaa_list a:hover{color:#1A98E5; text-decoration:underline}
+
+.huodong_list a{color:#666}
+.huodong_list a:hover{color:#1A98E5; text-decoration:underline}
+.login{ width:253px; border:solid 1px #dddddd; background:#ffffff; float:right; height:256px;}
+.login_b a{color:#333; border-right:solid #666 1px; padding:0px 20px;}
+
+
+.news{border:solid 1px #dddddd; background:#ffffff; float:left; height:auto}
+.news-right{width:477px; border:solid 1px #dddddd; background:#ffffff; float:right;height:280px;}
+.jianjie{width:200px; float:left; background:#FFF; border:solid 1px #ddd}
+.jianjie a{display:block; line-height:40px; text-align:center; color:#666; border-bottom:solid 1px #f7f7f7; font-size:14px;}
+
+.jianjie_a{width:777px; border:solid 1px #dddddd; background:#ffffff; float:right;}
+.tuku ul li{width:173px; float:left; margin-left:23px; margin-top:20px;color:#666; height:240px;}
+.tuku span{ text-align:center}
+.tukua ul li{width:173px; float:left; margin-left:23px; margin-top:20px;color:#666; height:210px;}
+.tukua span{ text-align:center}
+.shebei ul li{ width:180px; float:left; margin-left:17px; margin-top:20px;color:#666; height:200px;color:#136EC2}
+.shebei a{color:#136EC2}
+.shebei_a ul li{width:164px; float:left; margin-left:17px; margin-top:20px;color:#666; height:200px;color:#136EC2}
+.wenzhang p{ line-height:25px; text-indent:2em; margin:0; padding:0; text-align:left;color:#666;}
+.news_list ul li{ display:block; height:35px; width:950px; margin-left:25px; line-height:35px; border-bottom:solid 1px #eaeaea}
+.news_list a{color:#666}
+.news_list a:hover{color:#1A98E5; text-decoration:underline}
+.biankuang tr td{ border:solid 1px #dddddd}
+.huodong_list p{ text-indent:2em; padding:0; margin:0;}

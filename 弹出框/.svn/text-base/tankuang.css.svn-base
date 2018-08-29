@@ -1,0 +1,64 @@
+/* CSS Document */
+
+.main{
+  width:362px;
+  height:362px;
+}
+.baocun{
+  float:right;
+}
+.kuai{
+float:left;
+width:73px;
+height:55px;
+margin-right:45px;
+
+}
+.yi{
+height:25px;
+text-align:center;
+line-height:25px;
+vertical-align:sub;
+margin-bottom:0px;
+
+}
+.bg{
+ background-color:yellow;
+ height:30px;
+}
+
+.kuai-right{
+float:right;
+width:73px;
+height:55px;
+
+}
+.bg-tm{
+ background-color:#CCCCCC;
+ font-size:35px;
+ font-weight:bold;
+ line-height:30px;
+ text-align:center;
+ }
+.kuai-xia{
+margin-top:18px;
+float:left;
+width:73px;
+height:55px;
+margin-right:45px;
+}
+.kuai-xia-right{
+margin-top:18px;
+float:right;
+width:73px;
+height:55px;
+}
+.check{
+
+}
+.list li{
+list-style-type:none;
+margin-top:10px;
+margin-left:0px;
+
+}
