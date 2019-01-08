@@ -11,9 +11,9 @@ if(isset($_REQUEST['act'])){
 	$vars = explode('-',$vars);
 	list($module,$action) = $vars;
 }
-// ini_set("display_errors", "On");
+ini_set("display_errors", "On");
 
-// error_reporting(E_ALL | E_STRICT);
+error_reporting(E_ALL | E_STRICT);
 
 
 if (empty($module)){

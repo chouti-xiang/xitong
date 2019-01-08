@@ -1,7 +1,7 @@
 <?php 
 	//define('SITE_ROOT',dirname(dirname(dirname(__FILE__))).'/');
 	define('M_ROOT',dirname(__FILE__).'/');
-	
+	date_default_timezone_set("Asia/Hong_Kong");
 	$_SQL = array(
 		'DBTYPE' =>'mysql',
 		'DBHOST' =>"localhost",
