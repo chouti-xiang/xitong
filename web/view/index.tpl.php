@@ -3,7 +3,7 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" /> -->
-    <title>印象经验——抽屉箱系列</title>
+    <title>印象经验——抽屉箱系列1</title>
     <meta name="description" content="抽屉箱系列，这里是发烧友根据自身情况制定的免费使用场所，能够体验记录，收集，交流，空间">
     <meta name="keywords" content="个人标签，通用标签">
     <link rel="stylesheet" href="/web/css/main.css">
