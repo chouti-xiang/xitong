@@ -8,6 +8,11 @@
     <meta name="keywords" content="个人标签，通用标签">
     <link rel="stylesheet" href="/web/css/main.css">
  <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+ <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+  <script src="/js/jquery-1.7.1.min.js"></script>
+ <script src="/js/utf8-php/ueditor.config.js"></script>
+ <script src="/js/utf8-php/ueditor.all.js"></script>
+
 </head>
 
 <body class="result-op" style="overflow-x: visible;">
@@ -201,7 +206,7 @@
                     </div>
                 </div>
                                                 <div data-scroll-reveal="" class="col span_4_2 OP_LOG_LINK" data-click="{&quot;mod&quot;:&quot;card_mgr&quot;,&quot;act&quot;:&quot;msg_click&quot;}" data-scroll-reveal-initialized="true" data-scroll-reveal-complete="true">
-                    <div class="ibx-even editCard">
+                    <div class="ibx-even editCard" id="editCard">
                         <div class="ibx-inner editCard-inner">
                             <div class="editCard-inner-add" v-on:click="submit"></div>
                             <div class="editCard-inner-tip">添加卡片</div>
@@ -212,6 +217,9 @@
 
         </main>
        
+       <div>
+			
+       <div>
 
         <footer class="row" data-click="{&quot;mod&quot;:&quot;footer&quot;}">
             ©2018 Baidu <a class="beforebd" href="http://www.baidu.com/duty/">使用百度前必读</a> 京ICP证030173号
@@ -219,14 +227,62 @@
 
         
         </div>
+
+
+    </div>
+       <div id="tx-tj">
+         <div class="tx-tj-tj">
+    	<div><input type="text" placeholder="请在这里输入标题" class="title" ref="title" /></div>
+    	<div><input v-model="author" placeholder="请输入作者"  class="author" /></div>
+		  <script id="container" name="content" type="text/plain">
+       <div>请从这里开始写正文</div> 
+    </script>
+		<div class="tx-tj-qt"><div>封面</div><div>简介</div></div>
+		<div>分类名称</div>
+		<div>来源</div>
+		<div><button @click="submit()">提交</button></div>
+		</div>
     </div>
  
-    
-
-
+<style type="text/css">
+	#tx-tj{top:80px ;position: absolute;width:100%;margin:0 auto;height:100%;z-index: 6;}
+	.tx-tj-tj{width: 1000px;margin:0 auto;background-color: white;border-left:1px solid #ddd;border-right:1px solid #ddd;}
+	.tx-tj-qt{border-top :1px solid red;}
+	.title{ 
+			margin: 2px 0;
+			padding-right: 98px;
+			box-sizing: border-box;
+			font-size: 24px;
+			font-weight: 500;
+			height: 46px;
+			line-height: 46px;width: 100%;
+			background-color: transparent;
+			border: 0;
+			outline: 0;
+			padding-left: 7px;
+	}
+    .author{
+    	    padding-left: 7px;
+    	    margin: 2px 0;
+    		padding-right: 98px;
+    		box-sizing: border-box;
+        	width: 100%;
+    		background-color: transparent;
+    		border: 0;
+    		outline: 0;
+    }
+</style>
 
 </body></html>
 <script type="text/javascript">
+    <!-- 实例化编辑器 -->
+   var ue = UE.getEditor('container',{
+   	initialFrameHeight:300,
+   	autoFloatEnabled:true
+
+   });
+    
+
   var data_koubei = [
              {title:"这是标题",url:"www.baidu.com", description:"这是简介",date:"2019.1.7",tag:'<div style="color:red">我的思想</div>'},
              {title:"这是标题",url:"www.baidu.com", description:"这是简介",date:"2019.1.7",tag:'<div style="color:red">我的思想1</div>'}
@@ -256,4 +312,40 @@
         }
     }
   })
+
+  var editCard = new Vue({
+  	el:"#editCard",
+  	methods: {
+  		submit:function() {
+  			alert(1)
+  		}
+  	}
+  })
+	
+console.log(this);
+  var tx = new Vue({
+  	el:"#tx-tj",
+  	data:{title1:null,author1:null,author:''},
+  	methods:{
+  		submit:function() {
+  			//发送post请求，需要引用一个用于ajax的vue
+  			url = '/index.php?app=web&act=index-addCART';
+  			//这个没用，只是为了训练赋值
+  			 this.author1 = this.author;
+  			 this.titile1 = this.$refs.title.value;
+  			 //$refs.title.value 和微信小程序一样，把数据存放在全局变量中区，配合ref=“title”用，
+  			 //this.author 用于双向绑定，v-model 模式，也可以用于取值
+  			this.$http.post(url, {title:this.$refs.title.value,author:this.author}, {emulateJSON:true}).then(function(res){
+  				console.log(this);
+  				console.log(res);
+  				console.log(1);
+  			},function(res){
+  				console.log(2);
+				console.log(res);
+				console.log(2);
+  			})
+  		}
+  	}
+  })
 </script>
+

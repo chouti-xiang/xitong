@@ -13,4 +13,8 @@
 			d(1111);
 			include(tpl('index'));
 		}
+
+		function addCART(){
+			d($_POST);
+		}
 }
