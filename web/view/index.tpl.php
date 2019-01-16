@@ -177,9 +177,15 @@
                         <div class="ibx-inner-content" id="ibx-xinwen">
                         <div id="xinwen-pernews" class="xinwen-pernews"><div class="xinwen-common-tab"><div class="xinwen-normal-top"><span class="xinwen-normal-top-title">推荐鸡汤</span><span class="xinwen-normal-top-line"></span></div><div class="ibx-card-pager"><span class="ibx-card-pager-prev"></span><span class="ibx-card-pager-item current" data-page="0"></span><span class="ibx-card-pager-next"></span></div></div>
                         <div id="xinwen-pernews-main" class="xinwen-pernews-main">
-                        <ul class="xinwen-normal-list xinwen-pernews-list" style="width: 976px; left: 0px;">
-                        <li class="xinwen-pernews-item">
-                        <div class="xinwen-pernews-item-news"><a class="xinwen-pernews-item-link" target="_blank" href="http://tj.people.com.cn/n2/2018/0823/c375366-31968703.html"><img class="xinwen-pernews-item-img" src="yinxiang/httpe.jpg" alt=""></a><div class="xinwen-pernews-item-detail detail-type-img"><a class="xinwen-pernews-item-title" target="_blank" href="http://tj.people.com.cn/n2/2018/0823/c375366-31968703.html" title="甄子丹：勇敢走每一步 什么困难都可解决">甄子丹：勇敢走每一步 什么困难都可解决</a><p class="xinwen-pernews-item-info"><span class="xinwen-pernews-item-read">0</span><span class="xinwen-pernews-item-up">0</span><span class="xinwen-pernews-item-down">0</span></p></div></div></li></ul></div><div class="ibx-xinwen-mask hidden"></div></div></div></div>
+                        <ul class="xinwen-normal-list xinwen-pernews-list" style="width: 976px; left: 0px;" id="hot_article">
+                            <li class="xinwen-pernews-item"  v-for="article in data_hot_article">
+                                <div class="xinwen-pernews-item-news"><a class="xinwen-pernews-item-link" target="_blank" href="http://tj.people.com.cn/n2/2018/0823/c375366-31968703.html"><img class="xinwen-pernews-item-img" :src="article.thumb" alt=""></a><div class="xinwen-pernews-item-detail detail-type-img"><a class="xinwen-pernews-item-title" target="_blank" href="http://tj.people.com.cn/n2/2018/0823/c375366-31968703.html" title="article.title">{{article.title}}</a>
+                                    <!-- <p class="xinwen-pernews-item-info"><span class="xinwen-pernews-item-read">0</span><span class="xinwen-pernews-item-up">0</span><span class="xinwen-pernews-item-down">0</span></p> -->
+                                </div></div>
+                            </li>
+                        </ul>
+                    </div>
+            <div class="ibx-xinwen-mask hidden"></div></div></div></div>
                     </div>
                 </div>
             </div>
@@ -209,8 +215,9 @@
                     <div class="ibx-even editCard" id="editCard">
                         <div class="ibx-inner editCard-inner">
                             <div class="editCard-inner-add" v-on:click="submit"></div>
-                            <div class="editCard-inner-tip">添加卡片</div>
+                            <div class="editCard-inner-tip"><i style="width:24px;height:24px"></i><p>添加卡片</p></div>
                         </div>
+
                     </div>
                 </div>
                             </div>
@@ -257,9 +264,9 @@
 		分类名称</div>
 		<div>来源</div>
 		<div><button @click="submit()">提交</button></div>
-		</div> -->
+		</div>
     </div>
- 
+  -->
 <style type="text/css">
 	#tx-tj{top:80px ;position: absolute;width:100%;margin:0 auto;height:100%;z-index: 6;}
 	.tx-tj-tj{width: 1000px;margin:0 auto;background-color: white;border-left:1px solid #ddd;border-right:1px solid #ddd;}
@@ -277,6 +284,11 @@
     .tx-tj-qt i:after{width: 2px;height: 20px;left: 11px;top: 2px;content: "";display: block;position: absolute;background-color: #43b548;}
     .tx-tj-qt .tx-tj-description{float:left;margin-left: 10px;height:100px;width: 500px}
     .tx-tj-qt .tx-tj-description textarea{height:100%;width:100%;resize:none}
+     .editCard-inner-tip i{clear: both;}
+      .editCard-inner-tip i{display: inline-block;width: 24px;height: 24px;position: relative;}
+                        .editCard-inner-tip i:before{width: 20px;height: 2px;left: 2px;top: 11px;content: "";display: block;position: absolute;background-color: #43b548;}
+                        .editCard-inner-tip i:after{width: 2px;height: 20px;left: 11px;top: 2px;content: "";display: block;position: absolute;background-color: #43b548;}
+                     
 </style>
 
 </body></html>
@@ -296,6 +308,10 @@
   var data_hot_video =[
                {title:"我们的四十年",url:"www.baidu.com",thumb:"/web/resources/1.jpg",type:"热剧"},
                {title:"我们的四十年",url:"www.baidu.com", thumb:"/web/resources/1.jpg",type:"热剧"}
+  ]
+  var data_hot_article =[
+                {title:"甄子丹：勇敢走每一步 什么困难都可解决",thumb:"/web/resources/3.jpg"},
+                {title:"小饼饼：2019加油小饼饼",thumb:"/web/resources/4.jpg"}
   ]
   var geren =new Vue({
     el:'#geren',
@@ -324,6 +340,11 @@
             //return this;
         }
     }
+  })
+  var hot_article =new Vue({
+    el:"#hot_article",
+    data:data_hot_article,
+
   })
 
   var editCard = new Vue({
