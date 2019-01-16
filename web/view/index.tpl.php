@@ -237,8 +237,24 @@
 		  <script id="container" name="content" type="text/plain">
        <div>请从这里开始写正文</div> 
     </script>
-		<div class="tx-tj-qt"><div>封面</div><div>简介</div></div>
-		<div>分类名称</div>
+
+		<div class="tx-tj-qt">
+			<div class="tx-tj-qt-titile">封面和摘要</div>
+			<div>
+			<div class="tx-tj-thumb"><div class="tx-tj-thumb-logo"><i class="icon-add_css"></i></div><span>选择封面</span></div>
+			<div class="tx-tj-description"><textarea placeholder="选填，如果不填写会默认抓取正文前54个字"></textarea></div>
+			</div>
+		</div>
+		<div>
+			<div class="tx-tj-qt-titile">分类名称</div>
+			<div>
+			<ul>
+				<li>媒体空间</li>
+				<li>百家讲坛</li>
+				<li>醍醐灌顶</li>
+			</ul>
+			</div>
+		分类名称</div>
 		<div>来源</div>
 		<div><button @click="submit()">提交</button></div>
 		</div> -->
@@ -247,30 +263,20 @@
 <style type="text/css">
 	#tx-tj{top:80px ;position: absolute;width:100%;margin:0 auto;height:100%;z-index: 6;}
 	.tx-tj-tj{width: 1000px;margin:0 auto;background-color: white;border-left:1px solid #ddd;border-right:1px solid #ddd;}
-	.tx-tj-qt{border-top :1px solid red;}
-	.title{ 
-			margin: 2px 0;
-			padding-right: 98px;
-			box-sizing: border-box;
-			font-size: 24px;
-			font-weight: 500;
-			height: 46px;
-			line-height: 46px;width: 100%;
-			background-color: transparent;
-			border: 0;
-			outline: 0;
-			padding-left: 7px;
-	}
-    .author{
-    	    padding-left: 7px;
-    	    margin: 2px 0;
-    		padding-right: 98px;
-    		box-sizing: border-box;
-        	width: 100%;
-    		background-color: transparent;
-    		border: 0;
-    		outline: 0;
-    }
+	.tx-tj-qt{border-top: 1px solid #ebebeb;padding: 10px 10px 25px 10px ;display: table;}
+	.tx-tj-qt .tx-tj-qt-titile{margin:15px 0;}
+	.title{ margin: 2px 0;padding-right: 98px;box-sizing: border-box;font-size: 24px;font-weight: 500;height: 46px;line-height: 46px;width: 100%;background-color: transparent;border: 0;outline: 0;padding-left: 7px;}
+    .author{padding-left: 7px;margin: 2px 0;padding-right: 98px;box-sizing: border-box;width: 100%;background-color: transparent;border: 0;outline: 0;}
+    .tx-tj-thumb{border:2px dashed #ebebeb;padding:5px;width: 200px;height: 85px;text-align: center;float: left;}
+    .tx-tj-thumb span{color:green;font-size:16px;width:100%;text-align: center;display: block;margin-top: 5px;}
+    .tx-tj-thumb .tx-tj-thumb-logo{margin-top:13px;}
+/*这个地方使用了伪类 如:before，content就是为了美化标签做的背景，如果不想美化，只用线条，那么这个写空，然后给长宽*/
+	.tx-tj-thumb i{clear: both;}
+	.tx-tj-qt i{display: inline-block;width: 24px;height: 24px;position: relative;}
+    .tx-tj-qt i:before{width: 20px;height: 2px;left: 2px;top: 11px;content: "";display: block;position: absolute;background-color: #43b548;}
+    .tx-tj-qt i:after{width: 2px;height: 20px;left: 11px;top: 2px;content: "";display: block;position: absolute;background-color: #43b548;}
+    .tx-tj-qt .tx-tj-description{float:left;margin-left: 10px;height:100px;width: 500px}
+    .tx-tj-qt .tx-tj-description textarea{height:100%;width:100%;resize:none}
 </style>
 
 </body></html>
