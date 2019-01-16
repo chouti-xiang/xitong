@@ -16,5 +16,6 @@
 
 		function addCART(){
 			d($_POST);
+			d('hello vue');
 		}
 }
