@@ -18,4 +18,8 @@
 			d($_POST);
 			d('hello vue');
 		}
+
+		function getPID(){
+			echo json(array("直播真想","我的口碑","热门活动"),1);
+		}
 }

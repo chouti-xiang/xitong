@@ -237,7 +237,7 @@
 
 
     </div>
-       <!-- <div id="tx-tj">
+       <div id="tx-tj">
          <div class="tx-tj-tj">
     	<div><input type="text" ref="title" placeholder="请在这里输入标题" class="title"  /></div>
     	<div><input type="text" v-model="author" placeholder="请输入作者"  class="author" /></div>
@@ -252,21 +252,26 @@
 			<div class="tx-tj-description"><textarea placeholder="选填，如果不填写会默认抓取正文前54个字"></textarea></div>
 			</div>
 		</div>
-		<div>
+		<div >
 			<div class="tx-tj-qt-titile">分类名称</div>
-			<div>
-			<ul>
-				<li>媒体空间</li>
-				<li>百家讲坛</li>
-				<li>醍醐灌顶</li>
-			</ul>
+			<div id="tx-tj-category">
+			<select v-model="selected" name="category" @change="getPid">
+				<option value="">选择一个分类</option>
+				<option value="1">媒体空间</option>
+				<option value="2">百家讲坛</option>
+				<option value="3">醍醐灌顶</option>
+			</select>
+			<select name="category"  >
+				<option value="">选择一个分类</option>
+				<option v-for="(value, key, index) in FIDDATA" :value="key">{{value}}</option>
+			</select>
 			</div>
-		分类名称</div>
+		</div>
 		<div>来源</div>
 		<div><button @click="submit()">提交</button></div>
 		</div>
     </div>
-  -->
+ 
 <style type="text/css">
 	#tx-tj{top:80px ;position: absolute;width:100%;margin:0 auto;height:100%;z-index: 6;}
 	.tx-tj-tj{width: 1000px;margin:0 auto;background-color: white;border-left:1px solid #ddd;border-right:1px solid #ddd;}
@@ -284,10 +289,10 @@
     .tx-tj-qt i:after{width: 2px;height: 20px;left: 11px;top: 2px;content: "";display: block;position: absolute;background-color: #43b548;}
     .tx-tj-qt .tx-tj-description{float:left;margin-left: 10px;height:100px;width: 500px}
     .tx-tj-qt .tx-tj-description textarea{height:100%;width:100%;resize:none}
-     .editCard-inner-tip i{clear: both;}
-      .editCard-inner-tip i{display: inline-block;width: 24px;height: 24px;position: relative;}
-                        .editCard-inner-tip i:before{width: 20px;height: 2px;left: 2px;top: 11px;content: "";display: block;position: absolute;background-color: #43b548;}
-                        .editCard-inner-tip i:after{width: 2px;height: 20px;left: 11px;top: 2px;content: "";display: block;position: absolute;background-color: #43b548;}
+    .editCard-inner-tip i{clear: both;}
+    .editCard-inner-tip i{display: inline-block;width: 24px;height: 24px;position: relative;}
+    .editCard-inner-tip i:before{width: 20px;height: 2px;left: 2px;top: 11px;content: "";display: block;position: absolute;background-color: #43b548;}
+    .editCard-inner-tip i:after{width: 2px;height: 20px;left: 11px;top: 2px;content: "";display: block;position: absolute;background-color: #43b548;}
                      
 </style>
 
@@ -356,11 +361,10 @@
   	}
   })
 
-	
-console.log(this);
+
   var tx = new Vue({
   	el:"#tx-tj",
-  	data:{title1:null,author1:null,author:''},
+  	data:{title1:null,author1:null,author:'',selected:'',FIDDATA:''},
   	methods:{
   		submit:function() {
   			//发送post请求，需要引用一个用于ajax的vue
@@ -379,7 +383,20 @@ console.log(this);
 				console.log(res);
 				console.log(2);
   			})
-  		}
+  		},
+  		getPid:function() {
+ 			url = '/index.php?app=web&act=index-getPID';
+  		
+  			this.$http.post(url, {pid:this.selected}, {emulateJSON:true}).then(function(res){
+  				this.FIDDATA = res.data.data;
+  				console.log(res.data.data);
+  				
+  			},function(res){
+  				
+				console.log(res);
+				
+  			})
+ 		}
   	}
   })
 </script>
