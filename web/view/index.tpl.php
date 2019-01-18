@@ -252,9 +252,9 @@
 			<div class="tx-tj-description"><textarea placeholder="选填，如果不填写会默认抓取正文前54个字"></textarea></div>
 			</div>
 		</div>
-		<div >
+		<div class="tx-tj-category">
 			<div class="tx-tj-qt-titile">分类名称</div>
-			<div id="tx-tj-category">
+			<div>
 			<select v-model="selected" name="category" @change="getPid">
 				<option value="">选择一个分类</option>
 				<option value="1">媒体空间</option>
@@ -293,7 +293,9 @@
     .editCard-inner-tip i{display: inline-block;width: 24px;height: 24px;position: relative;}
     .editCard-inner-tip i:before{width: 20px;height: 2px;left: 2px;top: 11px;content: "";display: block;position: absolute;background-color: #43b548;}
     .editCard-inner-tip i:after{width: 2px;height: 20px;left: 11px;top: 2px;content: "";display: block;position: absolute;background-color: #43b548;}
-                     
+    /*分类*/
+    .tx-tj-category {margin-left:10px;}
+    .tx-tj-category .tx-tj-qt-titile{margin:10px 0;}                
 </style>
 
 </body></html>
