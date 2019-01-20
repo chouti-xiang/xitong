@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/web/css/main.css">
  <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
  <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+ <!-- <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script> -->
   <script src="/js/jquery-1.7.1.min.js"></script>
  <script src="/js/utf8-php/ueditor.config.js"></script>
  <script src="/js/utf8-php/ueditor.all.js"></script>
@@ -136,24 +137,27 @@
                 <span class="rule-wrap"><a id="video" name="video" class="rule"></a></span>
                 <div class="col span_4_4">
                     <div class="ibx-even">
-                        <div class="ibx-inner" id="ibx-mod-video"><div class="ibx-inner-title">
-                            <a  target="_blank" href="http://v.baidu.com/" class="ibx-inner-title-ctx">分类文章</a>
+                        <div class="ibx-inner" id="ibx-mod-video">
+                        <div class="ibx-inner-title" id='fenlei'>
+                            <a  target="_blank" href="http://v.baidu.com/" class="ibx-inner-title-ctx">媒体空间</a>
                             <ul class="ibx-inner-title-tab">
                                 <li  class="ibx-inner-title-tabitem ibx-video-my OP_LOG_TITLE">我的分类</li>
                                 <li  class="ibx-inner-title-tabitem ibx-video-hotTop OP_LOG_TITLE current">亲情推荐</li>
                             </ul>
-                            <a href="#" target="_blank" class="OP_LOG_TITLE card-enter-video-link">关注印象记忆小程序</a>
+                            <a herf='#' class="OP_LOG_TITLE card-enter-video-link" @click='miniPrograme' >关注我的小程序</a>
+                            <div style="width: 250px;height: 140px;position: absolute;right: 0;top: 50px;" v-if='tag'>
+                            <img src="/web/resources/xiaochengxu.jpg" style="width: 100px;height: 100px"></img>
+                               
+                            </div>
                         </div>
-                        <div class="ibx-inner-content" id="ibx-video">
+                        <div class="ibx-inner-content" id="ibx-video-list">
                         <div class="hot-video-tab">
-                            <span class="hot-video-tab-item hot-video-tab-tv OP_LOG_TITLE current" data-id="0" >电视剧</span>
-                            <span class="hot-video-tab-item hot-video-tab-movie OP_LOG_TITLE" data-id="1" data-click="{&quot;act&quot;: &quot;card_video_hot&quot;}">电影</span>
-                            <span class="hot-video-tab-item hot-video-tab-tvshow OP_LOG_TITLE" data-id="3" data-click="{&quot;act&quot;: &quot;card_video_hot&quot;}">综艺娱乐</span>
-                            <span class="hot-video-tab-item hot-video-tab-comic OP_LOG_TITLE" data-id="2" data-click="{&quot;act&quot;: &quot;card_video_hot&quot;}">动漫卡通</span>
+                            <span class="hot-video-tab-item hot-video-tab-tv OP_LOG_TITLE"  v-bind:class="{'current':selected ==1}" data-id="0" @click='movie()'>电影</span>
+                            <span class="hot-video-tab-item hot-video-tab-movie OP_LOG_TITLE"  v-bind:class="{'current':selected ==2}"><router-link to="/foo" @click='dianshiju()'>电视剧</router-link></span>
                         </div>
                         <div id="hot-video" class="my-video">
                             <ul class="ibx-video-list" style="width: 2868px; left: 0px;" id="hot-video1">
-                            <li class="ibx-video-item" v-for="(value, key, index) in data_hot_video"><a target="_blank" :href="value.url"><img v-bind:src="value.thumb" :alt="value.title" width="130"></a><div class="ibx-video-detail"><em class="ibx-video-dtitle-rank front ">{{key}}</em><a target="_blank" class="ibx-video-dtitle" :href="value.url" :title="value.title">{{value.title}}</a><label class="ibx-video-actor" :title="key">{{key}}</label><label class="ibx-video-tag" :title="value.type">{{value.type}}</label></div></li>
+                            <li class="ibx-video-item" v-for="(value, key, index) in item"><a target="_blank" :href="value.url"><img v-bind:src="value.thumb" :alt="value.title" width="130"></a><div class="ibx-video-detail"><em class="ibx-video-dtitle-rank front ">{{key+1}}</em><a target="_blank" class="ibx-video-dtitle" :href="value.url" :title="value.title">{{value.title}}</a><label class="ibx-video-actor" :title="key">{{key}}</label><label class="ibx-video-tag" :title="value.type">{{value.type}}</label></div></li>
                             </ul>
                         </div>
                         <div class="ibx-video-mask"></div>
@@ -169,10 +173,10 @@
                         <div class="ibx-inner-title">
                             <a target="_blank" href="http://xinwen.baidu.com/" class="ibx-inner-title-ctx">激情推荐</a>
                             <ul class="ibx-inner-title-tab">
-                                <li data-click="{&quot;act&quot;: &quot;card_xinwen_pernews&quot;}" class="ibx-inner-title-tabitem ibx-xinwen-pernews OP_LOG_TITLE current">今日文章</li>
-                                <li data-click="{&quot;act&quot;: &quot;card_xinwen_hot&quot;}" class="ibx-inner-title-tabitem ibx-xinwen-hot OP_LOG_TITLE">往期文章</li>
+                                <li data-click="{&quot;act&quot;: &quot;card_xinwen_pernews&quot;}" class="ibx-inner-title-tabitem ibx-xinwen-pernews OP_LOG_TITLE current">工具类</li>
+                                <li data-click="{&quot;act&quot;: &quot;card_xinwen_hot&quot;}" class="ibx-inner-title-tabitem ibx-xinwen-hot OP_LOG_TITLE">生活类</li>
                             </ul>
-                            <div class="xinwen-title-link-container OP_LOG_TITLE"><a href="http://app.news.baidu.com/?src=pctop" class="OP_LOG_TITLE" data-click="{&quot;act&quot;: &quot;card_xinwen_client&quot;}" target="_blank">关注博主公众号</a></div>
+                            <div class="xinwen-title-link-container OP_LOG_TITLE"><a href="http://app.news.baidu.com/?src=pctop" class="OP_LOG_TITLE" data-click="{&quot;act&quot;: &quot;card_xinwen_client&quot;}" target="_blank">关注我的公众号</a></div>
                         </div>
                         <div class="ibx-inner-content" id="ibx-xinwen">
                         <div id="xinwen-pernews" class="xinwen-pernews"><div class="xinwen-common-tab"><div class="xinwen-normal-top"><span class="xinwen-normal-top-title">推荐鸡汤</span><span class="xinwen-normal-top-line"></span></div><div class="ibx-card-pager"><span class="ibx-card-pager-prev"></span><span class="ibx-card-pager-item current" data-page="0"></span><span class="ibx-card-pager-next"></span></div></div>
@@ -193,20 +197,20 @@
             
                                 <div data-scroll-reveal="" class="col span_4_2" data-click="{&quot;mod&quot;: &quot;card_koubei&quot;}" data-scroll-reveal-initialized="true" data-scroll-reveal-complete="true">
                     <span class="rule-wrap"><a id="koubei" name="koubei" class="rule"></a></span>
-                    <div class="ibx-odd">
+                    <div class="ibx-odd" id="zz">
                         <div id="ibx-mod-koubei" class="ibx-inner ibx-mod-koubei">
                           <div class="ibx-inner-title">
-                          <a data-click="{&quot;act&quot;: &quot;card_koubei_link&quot;}" target="_blank" href="http://koubei.baidu.com/" class="ibx-inner-title-ctx">百度口碑</a>
+                          <a data-click="{&quot;act&quot;: &quot;card_koubei_link&quot;}" target="_blank" href="http://koubei.baidu.com/" class="ibx-inner-title-ctx">醍醐灌顶</a>
                           <ul class="ibx-inner-title-tab">
-                            <li data-click="{&quot;act&quot;: &quot;card_koubei_mine&quot;}" class="ibx-inner-title-tabitem ibx-koubei-mine OP_LOG_TITLE current">我的口碑</li>
-                            <li data-click="{&quot;act&quot;: &quot;card_koubei_turth&quot;}" class="ibx-inner-title-tabitem ibx-koubei-turth OP_LOG_TITLE">真相直播</li>
-                            <li data-click="{&quot;act&quot;: &quot;card_koubei_hot&quot;}" class="ibx-inner-title-tabitem ibx-koubei-hot OP_LOG_TITLE">热门活动</li>
+                            <li data-click="{&quot;act&quot;: &quot;card_koubei_mine&quot;}" class="ibx-inner-title-tabitem ibx-koubei-mine OP_LOG_TITLE" v-bind:class="{'current':selected ==1}" @click="gongzuo()">我的工作</li>
+                            <li data-click="{&quot;act&quot;: &quot;card_koubei_turth&quot;}" class="ibx-inner-title-tabitem ibx-koubei-turth OP_LOG_TITLE" v-bind:class="{'current':selected ==2}" @click="shenghuo()">我的生活</li>
+                            <li data-click="{&quot;act&quot;: &quot;card_koubei_hot&quot;}" class="ibx-inner-title-tabitem ibx-koubei-hot OP_LOG_TITLE"  v-bind:class="{'current':selected ==3}" @click="ganwu()">我的感悟</li>
                           </ul>
                             <div class="koubei-title-link-container OP_LOG_TITLE">
                             <a href="http://koubei.baidu.com/truth/wall?fr=ibaidu" class="OP_LOG_TITLE enter-koubei-link koubei-wall-link" data-click="{&quot;act&quot;: &quot;card_open_koubei_wall&quot;}" target="_blank" style="display: none;">进入真相墙 &gt;</a><a href="http://koubei.baidu.com/home?fr=ibaidu" class="OP_LOG_TITLE enter-koubei-link koubei-home-link" data-click="{&quot;act&quot;: &quot;card_open_koubei_home&quot;}" target="_blank" style="display: inline;">进入我的口碑 &gt;</a></div></div><div class="ibx-inner-content" id="ibx-koubei"><div id="koubei-mine-container" class="koubei-mine-container "><div class="koubei-mine-top"><div class="ibx-card-pager"><span class="ibx-card-pager-prev"></span><span class="ibx-card-pager-item current" data-page="0"></span><span class="ibx-card-pager-item" data-page="1"></span><span class="ibx-card-pager-item" data-page="2"></span><span class="ibx-card-pager-next"></span></div></div><div id="koubei-mine-list">
 
-                            <ul class="koubei-mine-list" id="koubei1" >
-                            <li class="koubei-mine-item" v-for="(value, key, index) in data_koubei"><div class="koubei-mine-item-container"><p class="koubei-mine-item-title"><a class="OP_LOG_TITLE" target="_blank" :title="value.title" :href="value.url" data-click="{&quot;act&quot;: &quot;card_koubei_item_message&quot;}" v-html="value.tag"></a></p><span class="koubei-mine-item-time">{{value.date}}</span></div></li>
+                            <ul class="koubei-mine-list"  >
+                            <li class="koubei-mine-item" v-for="(value, key, index) in item"><div class="koubei-mine-item-container"><p class="koubei-mine-item-title"><a class="OP_LOG_TITLE" target="_blank" :title="value.title" :href="value.url" data-click="{&quot;act&quot;: &quot;card_koubei_item_message&quot;}" v-html="value.tag"></a></p><span class="koubei-mine-item-time">{{value.date}}</span></div></li>
                             </ul>
                             </div></div></div></div>
                     </div>
@@ -215,7 +219,7 @@
                     <div class="ibx-even editCard" id="editCard">
                         <div class="ibx-inner editCard-inner">
                             <div class="editCard-inner-add" v-on:click="submit"></div>
-                            <div class="editCard-inner-tip"><i style="width:24px;height:24px"></i><p>添加卡片</p></div>
+                            <div class="editCard-inner-tip"><i></i><p>添加卡片</p></div>
                         </div>
 
                     </div>
@@ -237,7 +241,8 @@
 
 
     </div>
-       <div id="tx-tj">
+    <!-- 添加新页卡 -->
+       <!-- <div id="tx-tj">
          <div class="tx-tj-tj">
     	<div><input type="text" ref="title" placeholder="请在这里输入标题" class="title"  /></div>
     	<div><input type="text" v-model="author" placeholder="请输入作者"  class="author" /></div>
@@ -270,7 +275,7 @@
 		<div>来源</div>
 		<div><button @click="submit()">提交</button></div>
 		</div>
-    </div>
+    </div> -->
  
 <style type="text/css">
 	#tx-tj{top:80px ;position: absolute;width:100%;margin:0 auto;height:100%;z-index: 6;}
@@ -290,9 +295,9 @@
     .tx-tj-qt .tx-tj-description{float:left;margin-left: 10px;height:100px;width: 500px}
     .tx-tj-qt .tx-tj-description textarea{height:100%;width:100%;resize:none}
     .editCard-inner-tip i{clear: both;}
-    .editCard-inner-tip i{display: inline-block;width: 24px;height: 24px;position: relative;}
-    .editCard-inner-tip i:before{width: 20px;height: 2px;left: 2px;top: 11px;content: "";display: block;position: absolute;background-color: #43b548;}
-    .editCard-inner-tip i:after{width: 2px;height: 20px;left: 11px;top: 2px;content: "";display: block;position: absolute;background-color: #43b548;}
+    .editCard-inner-tip i{display: inline-block;width: 48px;height: 48px;position: relative;}
+    .editCard-inner-tip i:before{width: 40px;height: 4px;left: 4px;top: 22px;content: "";display: block;position: absolute;background-color: #43b548;}
+    .editCard-inner-tip i:after{width: 4px;height: 40px;left: 22px;top: 4px;content: "";display: block;position: absolute;background-color: #43b548;}
     /*分类*/
     .tx-tj-category {margin-left:10px;}
     .tx-tj-category .tx-tj-qt-titile{margin:10px 0;}                
@@ -307,11 +312,7 @@
 
    });
     
-
-  var data_koubei = [
-             {title:"这是标题",url:"www.baidu.com", description:"这是简介",date:"2019.1.7",tag:'<div style="color:red">我的思想</div>'},
-             {title:"这是标题",url:"www.baidu.com", description:"这是简介",date:"2019.1.7",tag:'<div style="color:red">我的思想1</div>'}
-  ];
+ 
   var data_hot_video =[
                {title:"我们的四十年",url:"www.baidu.com",thumb:"/web/resources/1.jpg",type:"热剧"},
                {title:"我们的四十年",url:"www.baidu.com", thumb:"/web/resources/1.jpg",type:"热剧"}
@@ -330,24 +331,118 @@
 
   var koubei = new Vue({
     // 选项
-    el:'#koubei1',
-    data:data_koubei,
+    el:'#zz',
+   
+    data:{
+        item:'',
+        selected:1
+    },
+  mounted: function() {
+        url = '/index.php?app=web&act=index-initDATA';
+            this.$http.get(url,{emulateJSON:true}).then(function(res){
+                console.log(res.body.data);
+                this.item =res.body.data
+            })
+    },
     methods: {
         details: function() {
             return  this.tag ;
+        },
+        gongzuo:function(){
+            // this.item =data_koubei;
+            this.selected =1;
+            url = '/index.php?app=web&act=index-addCART';
+            this.$http.post(url,{selected:this.selected},{emulateJSON:true}).then(function(res){
+                console.log(res.body.data);
+                this.item =res.body.data
+            })
+        },
+        shenghuo:function(){
+            this.selected =2;
+            url = '/index.php?app=web&act=index-addCART';
+            this.$http.post(url,{selected:this.selected},{emulateJSON:true}).then(function(res){
+                console.log(res.body.data);
+                this.item =res.body.data
+                console.log(this.item)
+            })
+        },
+        ganwu:function(){
+            this.selected=3;
+            url = '/index.php?app=web&act=index-addCART';
+            this.$http.post(url,{selected:this.selected},{emulateJSON:true}).then(function(res){
+                console.log(res.body.data);
+                this.item =res.body.data
+            })
         }
-    }
-  })
+    
+    // mounted:function(){
+    //     eventBus.$on("tellbbb",function(value){
+    //         this.data_koubei =value;
+    //     })
+    // }
+  }})
 
   var hot_video = new Vue({
-    el:"#hot-video1",
-    data:data_hot_video,
+    el:"#ibx-video-list",
+    data:{
+        item:'',
+        selected:1
+    },
+  mounted: function() {
+        url = '/index.php?app=web&act=index-initDATAM';
+            this.$http.get(url,{emulateJSON:true}).then(function(res){
+                console.log(res.body.data);
+                this.item =res.body.data
+            })
+    },
     methods: {
-        details:function() {
-            //return this;
+        details: function() {
+            return  this.tag ;
+        },
+        movie:function(){
+            this.selected =1;
+            url = '/index.php?app=web&act=index-movieCART';
+            this.$http.post(url,{selected:this.selected},{emulateJSON:true}).then(function(res){
+                console.log(res.body.data);
+                this.item =res.body.data
+            })
+        },
+        dianshiju:function(){
+            this.selected =2;
+            url = '/index.php?app=web&act=index-movieCART';
+            this.$http.post(url,{selected:this.selected},{emulateJSON:true}).then(function(res){
+                console.log(res.body.data);
+                this.item =res.body.data
+                console.log(this.item)
+            })
+        }
+      
+    
+    // mounted:function(){
+    //     eventBus.$on("tellbbb",function(value){
+    //         this.data_koubei =value;
+    //     })
+    // }
+  }
+})
+  var fenlei =new Vue({
+    el:'#fenlei',
+    data:{
+        tag:false
+    },
+    methods:{
+        miniPrograme:function(){
+            if(this.tag==false){
+            this.tag=true;}
+            else{
+                this.tag =false
+            }
+
         }
     }
   })
+   
+
   var hot_article =new Vue({
     el:"#hot_article",
     data:data_hot_article,
@@ -401,5 +496,34 @@
  		}
   	}
   })
+  // var koubei1 =new Vue({
+  //   el:"#shenghuo",
+  //   data:function(){
+  //       return{
+  //           bbb:''
+  //       }
+  //   },
+  //   methods:{
+  //       shenghuo:function(){
+  //           alert(22222)
+  //           url = '/index.php?app=web&act=index-addCART';
+  //           this.$http.post(url,{emulateJSON:true}).then(function(res){
+  //               console.log(res.body.data);
+  //               this.bbb =res.body.data
+               
+  //           })
+
+  //       }
+  //       tell:function(){
+  //           eventBus.$emit("tellbbb",this.bbb)
+  //       }
+  //   },
+    
+  // })
+  // var eventBus =new Vue({
+  //   eventBus.$on("haha",function(){
+
+  //   })
+  // })
 </script>
 
