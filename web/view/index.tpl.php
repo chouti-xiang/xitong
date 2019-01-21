@@ -13,7 +13,7 @@
   <script src="/js/jquery-1.7.1.min.js"></script>
  <script src="/js/utf8-php/ueditor.config.js"></script>
  <script src="/js/utf8-php/ueditor.all.js"></script>
-<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+
 </head>
 
 <body class="result-op" style="overflow-x: visible;">
@@ -141,7 +141,7 @@
                         <div class="ibx-inner-title" id='fenlei'>
                             <a  target="_blank" href="http://v.baidu.com/" class="ibx-inner-title-ctx">媒体空间</a>
                             <ul class="ibx-inner-title-tab">
-                                <!-- <li  class="ibx-inner-title-tabitem ibx-video-my OP_LOG_TITLE">我的分类</li> -->
+                                <li  class="ibx-inner-title-tabitem ibx-video-my OP_LOG_TITLE">我的分类</li>
                                 <li  class="ibx-inner-title-tabitem ibx-video-hotTop OP_LOG_TITLE current">亲情推荐</li>
                             </ul>
                             <a herf='#' class="OP_LOG_TITLE card-enter-video-link" @click='miniPrograme' >关注我的小程序</a>
@@ -165,25 +165,24 @@
                     </div>
                 </div>
             </div>
-            <div data-scroll-reveal="" class="row card-panel" data-scroll-reveal-initialized="true" data-scroll-reveal-complete="true" id='tuijian'>
+            <div data-scroll-reveal="" class="row card-panel" data-scroll-reveal-initialized="true" data-scroll-reveal-complete="true">
                 <span class="rule-wrap"><a id="xinwen" name="xinwen" class="rule"></a></span>
-                <div class="col span_4_4" >
+                <div class="col span_4_4">
                     <div class="ibx-even">
                         <div class="ibx-inner" id="ibx-mod-xinwen">
                         <div class="ibx-inner-title">
-                            <a target="_blank" href="#" class="ibx-inner-title-ctx">激情推荐</a>
+                            <a target="_blank" href="http://xinwen.baidu.com/" class="ibx-inner-title-ctx">激情推荐</a>
                             <ul class="ibx-inner-title-tab">
-                                <li data-click="{&quot;act&quot;: &quot;card_xinwen_pernews&quot;}" class="ibx-inner-title-tabitem ibx-xinwen-pernews OP_LOG_TITLE"  v-bind:class="{'current':selected ==1}" @click='tools'>工具类</li>
-                                <li data-click="{&quot;act&quot;: &quot;card_xinwen_hot&quot;}" class="ibx-inner-title-tabitem ibx-xinwen-hot OP_LOG_TITLE" v-bind:class="{'current':selected ==2}" @click='life'>生活类</li>
+                                <li data-click="{&quot;act&quot;: &quot;card_xinwen_pernews&quot;}" class="ibx-inner-title-tabitem ibx-xinwen-pernews OP_LOG_TITLE current">工具类</li>
+                                <li data-click="{&quot;act&quot;: &quot;card_xinwen_hot&quot;}" class="ibx-inner-title-tabitem ibx-xinwen-hot OP_LOG_TITLE">生活类</li>
                             </ul>
-                            <div class="xinwen-title-link-container OP_LOG_TITLE"><a href="#" class="OP_LOG_TITLE"  @click='gongzhong'>关注我的公众号</a></div>
-                            <div style="width:150px;height:100px;position:absolute;right:0;top:50px; background-color:red; z-index:10;" v-if='tag'></div>
+                            <div class="xinwen-title-link-container OP_LOG_TITLE"><a href="http://app.news.baidu.com/?src=pctop" class="OP_LOG_TITLE" data-click="{&quot;act&quot;: &quot;card_xinwen_client&quot;}" target="_blank">关注我的公众号</a></div>
                         </div>
                         <div class="ibx-inner-content" id="ibx-xinwen">
                         <div id="xinwen-pernews" class="xinwen-pernews"><div class="xinwen-common-tab"><div class="xinwen-normal-top"><span class="xinwen-normal-top-title">推荐鸡汤</span><span class="xinwen-normal-top-line"></span></div><div class="ibx-card-pager"><span class="ibx-card-pager-prev"></span><span class="ibx-card-pager-item current" data-page="0"></span><span class="ibx-card-pager-next"></span></div></div>
                         <div id="xinwen-pernews-main" class="xinwen-pernews-main">
                         <ul class="xinwen-normal-list xinwen-pernews-list" style="width: 976px; left: 0px;" id="hot_article">
-                            <li class="xinwen-pernews-item"  v-for="article in item">
+                            <li class="xinwen-pernews-item"  v-for="article in data_hot_article">
                                 <div class="xinwen-pernews-item-news"><a class="xinwen-pernews-item-link" target="_blank" href="http://tj.people.com.cn/n2/2018/0823/c375366-31968703.html"><img class="xinwen-pernews-item-img" :src="article.thumb" alt=""></a><div class="xinwen-pernews-item-detail detail-type-img"><a class="xinwen-pernews-item-title" target="_blank" href="http://tj.people.com.cn/n2/2018/0823/c375366-31968703.html" title="article.title">{{article.title}}</a>
                                     <!-- <p class="xinwen-pernews-item-info"><span class="xinwen-pernews-item-read">0</span><span class="xinwen-pernews-item-up">0</span><span class="xinwen-pernews-item-down">0</span></p> -->
                                 </div></div>
@@ -242,8 +241,8 @@
 
 
     </div>
-    <!-- 添加新页卡 -->
-       <!-- <div id="tx-tj">
+    <!-- 添加新页卡 bengin-->
+       <div id="tx-tj">
          <div class="tx-tj-tj">
     	<div><input type="text" ref="title" placeholder="请在这里输入标题" class="title"  /></div>
     	<div><input type="text" v-model="author" placeholder="请输入作者"  class="author" /></div>
@@ -269,15 +268,15 @@
 			</select>
 			<select name="category"  >
 				<option value="">选择一个分类</option>
-				<option v-for="(value, key, index) in FIDDATA" :value="key">{{value}}</option>
+				<option v-for="(value, key, index) in FIDDATA" :value="key">{{value.cname}}</option>
 			</select>
 			</div>
 		</div>
 		<div>来源</div>
 		<div><button @click="submit()">提交</button></div>
 		</div>
-    </div> -->
- 
+    </div>
+ <!-- 添加新页卡 end-->
 <style type="text/css">
 	#tx-tj{top:80px ;position: absolute;width:100%;margin:0 auto;height:100%;z-index: 6;}
 	.tx-tj-tj{width: 1000px;margin:0 auto;background-color: white;border-left:1px solid #ddd;border-right:1px solid #ddd;}
@@ -313,6 +312,11 @@
 
    });
     
+ 
+  var data_hot_video =[
+               {title:"我们的四十年",url:"www.baidu.com",thumb:"/web/resources/1.jpg",type:"热剧"},
+               {title:"我们的四十年",url:"www.baidu.com", thumb:"/web/resources/1.jpg",type:"热剧"}
+  ]
   var data_hot_article =[
                 {title:"甄子丹：勇敢走每一步 什么困难都可解决",thumb:"/web/resources/3.jpg"},
                 {title:"小饼饼：2019加油小饼饼",thumb:"/web/resources/4.jpg"}
@@ -333,7 +337,7 @@
         item:'',
         selected:1
     },
-  mounted: function() {
+   mounted: function() {
         url = '/index.php?app=web&act=index-initDATA';
             this.$http.get(url,{emulateJSON:true}).then(function(res){
                 console.log(res.body.data);
@@ -370,12 +374,6 @@
                 this.item =res.body.data
             })
         }
-    
-    // mounted:function(){
-    //     eventBus.$on("tellbbb",function(value){
-    //         this.data_koubei =value;
-    //     })
-    // }
   }})
 
   var hot_video = new Vue({
@@ -412,8 +410,6 @@
                 console.log(this.item)
             })
         }
-      
-   
   }
 })
   var fenlei =new Vue({
@@ -433,58 +429,12 @@
     }
   })
    
-  var tuijian=new Vue({
-    el:'#tuijian',
-    data:{
-        tag:false,
-        item:'',
-        selected:1
-    },
-    mounted:function(){
-         url = '/index.php?app=web&act=index-initDATAT';
-            this.$http.get(url,{emulateJSON:true}).then(function(res){
-                console.log(res.body.data);
-                this.item =res.body.data
-            })
 
-    },
-    methods:{
-        gongzhong:function(){
-            if(this.tag==false){
-            this.tag=true;}
-            else{
-                this.tag =false
-            }
-        },
-        tools:function(){
-            this.selected =1;
-            url = '/index.php?app=web&act=index-tuijianCART';
-            this.$http.post(url,{selected:this.selected},{emulateJSON:true}).then(function(res){
-                console.log(res.body.data);
-                this.item =res.body.data
-            })
+  var hot_article =new Vue({
+    el:"#hot_article",
+    data:data_hot_article,
 
-
-        },
-        life:function(){
-            this.selected =2;
-            url = '/index.php?app=web&act=index-tuijianCART';
-            this.$http.post(url,{selected:this.selected},{emulateJSON:true}).then(function(res){
-                console.log(res.body.data);
-                this.item =res.body.data
-            })
-
-        }
-
-        
-    }
   })
-
-  // var hot_article =new Vue({
-  //   el:"#hot_article",
-  //   data:data_hot_article,
-
-  // })
 
   var editCard = new Vue({
   	el:"#editCard",
@@ -499,6 +449,12 @@
   var tx = new Vue({
   	el:"#tx-tj",
   	data:{title1:null,author1:null,author:'',selected:'',FIDDATA:''},
+  	mounted: function() {
+        url = '/index.php?app=web&act=index-getPID';
+        this.$http.get(url,{emulateJSON:true}).then(function(res){
+            this.FIDDATA =res.body.data;
+        })
+    },
   	methods:{
   		submit:function() {
   			//发送post请求，需要引用一个用于ajax的vue
@@ -533,24 +489,34 @@
  		}
   	}
   })
-// window.onload =function(){
-  var weather =new Vue({
-    el:'#ibx-cal-content',
-    data:{
-        weather:''
+  // var koubei1 =new Vue({
+  //   el:"#shenghuo",
+  //   data:function(){
+  //       return{
+  //           bbb:''
+  //       }
+  //   },
+  //   methods:{
+  //       shenghuo:function(){
+  //           alert(22222)
+  //           url = '/index.php?app=web&act=index-addCART';
+  //           this.$http.post(url,{emulateJSON:true}).then(function(res){
+  //               console.log(res.body.data);
+  //               this.bbb =res.body.data
+               
+  //           })
 
-    },
-   mounted:function(){
-    // get:function(){
-        alert(9999)
-        this.$http.get('http://v.juhe.cn/weather/index?format=2&cityname=%E8%8B%8F%E5%B7%9E&key=8bc8c4fd194208ffee77a95773f9cda1').then(function(res){
-            this.weather =res.body
-            console.log(res.body)
-        })
-    }
-   // }
+  //       }
+  //       tell:function(){
+  //           eventBus.$emit("tellbbb",this.bbb)
+  //       }
+  //   },
     
-  })
-  // }
+  // })
+  // var eventBus =new Vue({
+  //   eventBus.$on("haha",function(){
+
+  //   })
+  // })
 </script>
 

@@ -10,39 +10,9 @@
 		}
 
 		function index(){
-			$data = array(
-						0=>array(
-								'title' => '这是标题',
-								'url' => 'www.baidu.com',
-								'description' => '这是简介',
-								'date' => '2019.1.7',
-								'tag' => '<div style="color:red">我的思想1</div>'
-							),
-						1=>array(
-								'title' => '这是标题',
-								'url' => 'www.baidu.com',
-								'description' => '这是简介',
-								'date' => '2019.1.7',
-								'tag' => '<div style="color:red">我的思想2</div>'
-							),
-					);
-			$data = json_encode($data);
 			include(tpl('index'));
 		}
-		function initDATAT(){
-			$data = array(
-						0=>array(
-								'title'=>"甄子丹：勇敢走每一步 什么困难都可解决",
-								'thumb'=>"/web/resources/3.jpg",
-							),
-						1=>array(
-								'title'=>"小饼饼：2019加油小饼饼",
-								'thumb'=>"/web/resources/4.jpg",
-							),
-					);
-				echo json($data, 1);
 
-		}
 		function initDATAM(){
 			$data = array(
 						0=>array(
@@ -182,48 +152,11 @@
 
 				}
 		}
-		function tuijianCART(){
-			if($_POST['selected']==1){
-				$data = array(
-						0=>array(
-								'title'=>"甄子丹：勇敢走每一步 什么困难都可解决",
-								'thumb'=>"/web/resources/3.jpg",
-							),
-						1=>array(
-								'title'=>"小饼饼：2019加油小饼饼",
-								'thumb'=>"/web/resources/4.jpg",
-							),
-					);
-				echo json($data, 1);
-
-				}elseif ($_POST['selected']==2) {
-					$data = array(
-						0=>array(
-								'title'=>"加油加油",
-								'thumb'=>"/web/resources/4.jpg",
-							),
-						1=>array(
-								'title'=>"15元一斤",
-								'thumb'=>"/web/resources/2.jpg",
-							),
-					);
-				echo json($data, 1);
-					
-				}
-
-		}
 
 		function getPID(){
-
-			if($_POST['pid'] == 1){
-				echo json(array("推荐电影","口碑热剧","完美纪录片"),1);
-			}elseif($_POST['pid'] == 2){
-				echo json(array("工具类","生活类","鸡汤帖"),1);
-			}elseif($_POST['pid'] == 3){
-				echo json(array("我的工作","我的生活","我的感悟"),1);
-			}
-
+			$where = $_POST['pid'] ? $_POST['pid'] : 1;
+			$data = $this->index->get_categray($where);
+			echo json($data,1);
 			
 		}
-		
 }
