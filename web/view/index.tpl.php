@@ -86,16 +86,16 @@
             <div data-scroll-reveal="" class="row user-panel" data-scroll-reveal-initialized="true" data-scroll-reveal-complete="true">
                 <div class="col span_5_1">
                     <div id="ibx-uc" data-click="{&quot;mod&quot;:&quot;uc&quot;}">
-                        <div class="ibx-inner">
+                        <div class="ibx-inner" id='geren'>
                             <div class="ibx-uc-uimg">
                                 <div class="ibx-uc-uimg-mask">
                                     <a data-click="{&quot;act&quot;:&quot;uc_set&quot;}" class="ibx-uc-ulink" target="_blank" href="http://www.baidu.com/p/setting/profile/portrait">更换头像</a>
                                 </div>
-                                <img class="ibx-uc-img" src="yinxiang/ea986d707368656e7169a106.jpg">
+                                <img class="ibx-uc-img" :src="touxiang">
                                 
                             </div>
                             <div class="ibx-uc-unick">
-                                <a data-click="{&quot;act&quot;:&quot;uc_name&quot;}" target="_blank" href="http://www.baidu.com/p/setting/profile/basic" class="ibx-uc-nick">mpshenqi</a>
+                                <a data-click="{&quot;act&quot;:&quot;uc_name&quot;}" target="_blank" href="http://www.baidu.com/p/setting/profile/basic" class="ibx-uc-nick">{{name}}</a>
                                 
                             </div> 
                             <div class="ibx-uc-utool">
@@ -230,7 +230,7 @@
 
 
     </div>
-       <div id="tx-tj">
+       <!-- <div id="tx-tj">
          <div class="tx-tj-tj">
     	<div><input type="text" placeholder="请在这里输入标题" class="title" ref="title" /></div>
     	<div><input v-model="author" placeholder="请输入作者"  class="author" /></div>
@@ -242,7 +242,7 @@
 		<div>来源</div>
 		<div><button @click="submit()">提交</button></div>
 		</div>
-    </div>
+    </div> -->
  
 <style type="text/css">
 	#tx-tj{top:80px ;position: absolute;width:100%;margin:0 auto;height:100%;z-index: 6;}
@@ -288,9 +288,17 @@
              {title:"这是标题",url:"www.baidu.com", description:"这是简介",date:"2019.1.7",tag:'<div style="color:red">我的思想1</div>'}
   ];
   var data_hot_video =[
-               {title:"我们的四十年",url:"https://www.baidu.com", thumb:"http://yinxiang.cc/web/resources/5bafa40f4bfbfbede8baa6c373f0f736aec31fae.jpg",type:"热剧"},
-               {title:"我们的四十年",url:"www.baidu.com", thumb:"http://yinxiang.cc/web/resources/5bafa40f4bfbfbede8baa6c373f0f736aec31fae.jpg",type:"热剧"}
-  ]
+               {title:"我们的四十年",url:"https://www.baidu.com", thumb:"/web/resources/1.jpg",type:"热剧"},
+               {title:"我们的四十年",url:"www.baidu.com", thumb:"/web/resources/1.jpg",type:"热剧"}
+  ];
+
+  var geren =new Vue({
+    el:'#geren',
+    data:{
+        name:'kaka',
+        touxiang:'/web/resources/2.jpg'
+    }
+  })
 
   var koubei = new Vue({
     // 选项
