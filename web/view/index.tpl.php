@@ -241,8 +241,8 @@
 
 
     </div>
-    <!-- 添加新页卡 -->
-       <!-- <div id="tx-tj">
+    <!-- 添加新页卡 bengin-->
+       <div id="tx-tj">
          <div class="tx-tj-tj">
     	<div><input type="text" ref="title" placeholder="请在这里输入标题" class="title"  /></div>
     	<div><input type="text" v-model="author" placeholder="请输入作者"  class="author" /></div>
@@ -268,15 +268,15 @@
 			</select>
 			<select name="category"  >
 				<option value="">选择一个分类</option>
-				<option v-for="(value, key, index) in FIDDATA" :value="key">{{value}}</option>
+				<option v-for="(value, key, index) in FIDDATA" :value="key">{{value.cname}}</option>
 			</select>
 			</div>
 		</div>
 		<div>来源</div>
 		<div><button @click="submit()">提交</button></div>
 		</div>
-    </div> -->
- 
+    </div>
+ <!-- 添加新页卡 end-->
 <style type="text/css">
 	#tx-tj{top:80px ;position: absolute;width:100%;margin:0 auto;height:100%;z-index: 6;}
 	.tx-tj-tj{width: 1000px;margin:0 auto;background-color: white;border-left:1px solid #ddd;border-right:1px solid #ddd;}
@@ -337,7 +337,7 @@
         item:'',
         selected:1
     },
-  mounted: function() {
+   mounted: function() {
         url = '/index.php?app=web&act=index-initDATA';
             this.$http.get(url,{emulateJSON:true}).then(function(res){
                 console.log(res.body.data);
@@ -374,12 +374,6 @@
                 this.item =res.body.data
             })
         }
-    
-    // mounted:function(){
-    //     eventBus.$on("tellbbb",function(value){
-    //         this.data_koubei =value;
-    //     })
-    // }
   }})
 
   var hot_video = new Vue({
@@ -416,13 +410,6 @@
                 console.log(this.item)
             })
         }
-      
-    
-    // mounted:function(){
-    //     eventBus.$on("tellbbb",function(value){
-    //         this.data_koubei =value;
-    //     })
-    // }
   }
 })
   var fenlei =new Vue({
@@ -462,6 +449,12 @@
   var tx = new Vue({
   	el:"#tx-tj",
   	data:{title1:null,author1:null,author:'',selected:'',FIDDATA:''},
+  	mounted: function() {
+        url = '/index.php?app=web&act=index-getPID';
+        this.$http.get(url,{emulateJSON:true}).then(function(res){
+            this.FIDDATA =res.body.data;
+        })
+    },
   	methods:{
   		submit:function() {
   			//发送post请求，需要引用一个用于ajax的vue

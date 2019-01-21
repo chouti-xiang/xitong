@@ -10,25 +10,9 @@
 		}
 
 		function index(){
-			$data = array(
-						0=>array(
-								'title' => '这是标题',
-								'url' => 'www.baidu.com',
-								'description' => '这是简介',
-								'date' => '2019.1.7',
-								'tag' => '<div style="color:red">我的思想1</div>'
-							),
-						1=>array(
-								'title' => '这是标题',
-								'url' => 'www.baidu.com',
-								'description' => '这是简介',
-								'date' => '2019.1.7',
-								'tag' => '<div style="color:red">我的思想2</div>'
-							),
-					);
-			$data = json_encode($data);
 			include(tpl('index'));
 		}
+
 		function initDATAM(){
 			$data = array(
 						0=>array(
@@ -170,15 +154,9 @@
 		}
 
 		function getPID(){
-
-			if($_POST['pid'] == 1){
-				echo json(array("推荐电影","口碑热剧","完美纪录片"),1);
-			}elseif($_POST['pid'] == 2){
-				echo json(array("工具类","生活类","鸡汤帖"),1);
-			}elseif($_POST['pid'] == 3){
-				echo json(array("我的工作","我的生活","我的感悟"),1);
-			}
-
+			$where = $_POST['pid'] ? $_POST['pid'] : 1;
+			$data = $this->index->get_categray($where);
+			echo json($data,1);
 			
 		}
 }

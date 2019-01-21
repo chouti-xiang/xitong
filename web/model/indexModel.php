@@ -1,14 +1,15 @@
 <?php
-	class indexModel  
+	class indexModel extends db 
 	{
 		function __construct()
 		{
-			// parent::__construct();
+			parent::__construct();
 		}
 
 		//查询用户数量
-		function get_user_num(){
-			$data=$this->get('course_users')->select();
+		function get_categray($where){
+			$sql = "SELECT * FROM hy_categray WHERE pid = '".$where."'";
+			$data=$this->getAll($sql);
 			return $data;
 		}
 
