@@ -12,6 +12,27 @@
 		function index(){
 			include(tpl('index'));
 		}
+		function initDATAT(){
+			// $data = array(
+			// 			0=>array(
+			// 					'title'=>"甄子丹：勇敢走每一步 什么困难都可解决",
+			// 					'thumb'=>"/web/resources/3.jpg",
+			// 				),
+			// 			1=>array(
+			// 					'title'=>"小饼饼：2019加油小饼饼",
+			// 					'thumb'=>"/web/resources/4.jpg",
+			// 				),
+			// 		);
+			// 	echo json($data, 1);
+			print_r(11111);
+
+			$where = $_POST['pid'] ? $_POST['pid'] : 1;
+			print_r($where);
+			$data = $this->index->get_article($where);
+			echo json($data,1);
+
+
+		}
 
 		function initDATAM(){
 			$data = array(
@@ -152,6 +173,36 @@
 
 				}
 		}
+		function tuijianCART(){
+			if($_POST['selected']==1){
+				$data = array(
+						0=>array(
+								'title'=>"甄子丹：勇敢走每一步 什么困难都可解决",
+								'thumb'=>"/web/resources/3.jpg",
+							),
+						1=>array(
+								'title'=>"小饼饼：2019加油小饼饼",
+								'thumb'=>"/web/resources/4.jpg",
+							),
+					);
+				echo json($data, 1);
+
+
+			}elseif ($_POST['selected']==2) {
+				$data = array(
+						0=>array(
+								'title'=>"努力让人生更好",
+								'thumb'=>"/web/resources/1.jpg",
+							),
+						1=>array(
+								'title'=>"加油加油",
+								'thumb'=>"/web/resources/2.jpg",
+							),
+					);
+				echo json($data, 1);
+				
+			}
+		}
 
 		function getPID(){
 			$where = $_POST['pid'] ? $_POST['pid'] : 1;
@@ -159,4 +210,5 @@
 			echo json($data,1);
 			
 		}
+
 }

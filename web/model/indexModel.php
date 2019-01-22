@@ -12,6 +12,12 @@
 			$data=$this->getAll($sql);
 			return $data;
 		}
+		function get_article($where){
+			$sql = "SELECT * FROM hy_article WHERE columnId = '".$where."'";
+			print_r($sql);
+			$data=$this->getAll($sql);
+			return $data;
+		}
 
 	   //获取文章列表
 		function get_words_list($where){	

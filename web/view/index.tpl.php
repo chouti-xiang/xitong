@@ -127,13 +127,28 @@
                 </div>
                 <div class="col span_5_4">
                     <div id="ibx-cal" data-click="{&quot;mod&quot;:&quot;cal&quot;}">
-                        <div class="ibx-inner" id="ibx-cal-content"><div class="ibx-cal-box clr"><div id="ibx-cal-box"><div class="ibx-cal-box-l"><a href="http://www.baidu.com/s?ie=utf-8&amp;wd=%E7%A9%BA%E6%B0%94%E8%B4%A8%E9%87%8F" target="_blank" class="ibx-weather-quality level0" title="空气质量：空气质量优，pm2.5：37">空气质量优</a><a data-click="{&quot;act&quot;:&quot;cal_local&quot;}" href="http://map.baidu.com/?newmap=1&amp;ie=utf-8&amp;from=ibaidu&amp;s=s%26wd%3D%E5%8C%97%E4%BA%AC" target="_blank" class="ibx-location">北京</a><div class="ibx-date">8月23日</div><div class="ibx-lunar clr"><span class="ibx-day">周四</span><span class="ibx-luanr-ctx">七月十三</span></div><a href="http://www.baidu.com/s?ie=utf-8&amp;wd=%E5%A4%A9%E6%B0%94" target="_blank" class="ibx-weather-temp"><img src="yinxiang/1.png" class="ibx-weather-img" title="晴"><span class="ibx-weather-high" title="最高温度31°">31°</span><span class="ibx-weather-low" title="最低温度21°">21°</span></a></div><div class="ibx-cal-box-r" id="ibx-cal-box-r"><ul class="ibx-cal-dlist clr" style="width: 338px; margin-left: 0px;"><li class="ibx-cal-ditem ibx-cal-digame"><a data-click="{&quot;act&quot;:&quot;cal_close&quot;}" href="javascript:;" class="ibx-cal-ditem-close" data-uuid="dcf4c7333855862bbf1a9b653c912cd7" data-uri="calendars/ucvs/activity/youxi"></a><div class="ibx-cal-ditem-game"><a href="http://koubei.baidu.com/activity/travel?fr=ibaidu" target="_blank"><img class="ibx-cal-game-img" src="yinxiang/koubei20160504.jpg"></a><div class="ibx-cal-game-ctx"><div class="ibx-cal-ditem-bg"></div><div class="ibx-cal-game-detail"><a title="旅游维权来百度口碑" href="http://koubei.baidu.com/activity/travel?fr=ibaidu" target="_blank" class="ibx-cal-game-title">旅游维权来百度口碑</a></div></div></div></li><li class="ibx-cal-ditem ibx-cal-diadd"><a data-click="{&quot;act&quot;:&quot;cal_add&quot;}" href="javascript:;" class="ibx-cal-ditem-addbtn"><span class="ibx-cal-ditem-addicon"></span>新建提醒</a></li></ul></div></div><div class="ibx-cal-dpage"><div class="ibx-cal-dpage-bg"></div><div class="ibx-cal-dpage-prev disabled"></div><div class="ibx-cal-dpage-next"></div></div></div><div id="ibx-cal-addPop" class="ibx-cal-addPop"><div class="ibx-cal-apc"><a href="javascript:;" class="ibx-cal-apc-close" title="关闭"></a><div class="ibx-cal-apc-title">新增订阅提醒</div><div class="ibx-cal-apc-con"><a href="javascript:;" data-click="{&quot;act&quot;:&quot;cal_add&quot;}" class="ibx-cal-apc-btn ibx-cal-apc-addbtn">日程</a><a target="_blank" data-click="{&quot;act&quot;:&quot;zhuiju_add&quot;}" href="http://v.baidu.com/?fr=ibaidu" class="ibx-cal-apc-btn">视频追剧</a></div><div class="ibx-cal-triangle"><span class="ibx-cal-triangle-border"></span><span class="ibx-cal-triangle-ctx"></span></div></div></div><div class="ibx-cal-pop-mask"></div><div class="ibx-cal-tab clr"><div class="ibx-cal-tab-op clr"><a href="javascript:;" data-click="{&quot;act&quot;:&quot;cal_add_all&quot;}" class="ibx-cal-tab-add"></a><a href="javascript:;" data-click="{&quot;act&quot;:&quot;cal_conf&quot;}" class="ibx-cal-tab-conf"></a></div></div></div>
+                        <div class="ibx-inner" id="ibx-cal-content">
+                        <div class="ibx-cal-box clr">
+                        <div id="ibx-cal-box"><div class="ibx-cal-box-l">
+                        <!-- <iframe width="800" scrolling="no" height="120" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=19&icon=1&temp=1&num=1&site=12"></iframe> -->
+                        <a href="http://www.baidu.com/s?ie=utf-8&amp;wd=%E7%A9%BA%E6%B0%94%E8%B4%A8%E9%87%8F" target="_blank" class="ibx-weather-quality level0" title="空气质量：空气质量优，pm2.5：37">空气质量优</a>
+                        <a data-click="{&quot;act&quot;:&quot;cal_local&quot;}" href="http://map.baidu.com/?newmap=1&amp;ie=utf-8&amp;from=ibaidu&amp;s=s%26wd%3D%E5%8C%97%E4%BA%AC" target="_blank" class="ibx-location">北京</a>
+                        <div class="ibx-date">8月23日</div>
+                        <div class="ibx-lunar clr"><span class="ibx-day">周四</span><span class="ibx-luanr-ctx">七月十三</span></div>
+                        <a href="http://www.baidu.com/s?ie=utf-8&amp;wd=%E5%A4%A9%E6%B0%94" target="_blank" class="ibx-weather-temp"><img src="yinxiang/1.png" class="ibx-weather-img" title="晴"><span class="ibx-weather-high" title="最高温度31°">31°</span>
+                        <span class="ibx-weather-low" title="最低温度21°">21°</span></a>
+                        </div>
+                        <div class="ibx-cal-box-r" id="ibx-cal-box-r"><ul class="ibx-cal-dlist clr" style="width: 338px; margin-left: 0px;"><li class="ibx-cal-ditem ibx-cal-digame"><a data-click="{&quot;act&quot;:&quot;cal_close&quot;}" href="javascript:;" class="ibx-cal-ditem-close" data-uuid="dcf4c7333855862bbf1a9b653c912cd7" data-uri="calendars/ucvs/activity/youxi"></a><div class="ibx-cal-ditem-game"><a href="http://koubei.baidu.com/activity/travel?fr=ibaidu" target="_blank"><img class="ibx-cal-game-img" src="yinxiang/koubei20160504.jpg"></a>
+                        <div class="ibx-cal-game-ctx"><div class="ibx-cal-ditem-bg"></div><div class="ibx-cal-game-detail"><a title="旅游维权来百度口碑" href="http://koubei.baidu.com/activity/travel?fr=ibaidu" target="_blank" class="ibx-cal-game-title">旅游维权来百度口碑</a></div></div></div></li>
+                        <li class="ibx-cal-ditem ibx-cal-diadd"><a data-click="{&quot;act&quot;:&quot;cal_add&quot;}" href="javascript:;" class="ibx-cal-ditem-addbtn"><span class="ibx-cal-ditem-addicon"></span>新建提醒</a></li></ul></div></div><div class="ibx-cal-dpage"><div class="ibx-cal-dpage-bg"></div><div class="ibx-cal-dpage-prev disabled"></div><div class="ibx-cal-dpage-next"></div></div></div><div id="ibx-cal-addPop" class="ibx-cal-addPop"><div class="ibx-cal-apc"><a href="javascript:;" class="ibx-cal-apc-close" title="关闭"></a><div class="ibx-cal-apc-title">新增订阅提醒</div><div class="ibx-cal-apc-con"><a href="javascript:;" data-click="{&quot;act&quot;:&quot;cal_add&quot;}" class="ibx-cal-apc-btn ibx-cal-apc-addbtn">日程</a><a target="_blank" data-click="{&quot;act&quot;:&quot;zhuiju_add&quot;}" href="http://v.baidu.com/?fr=ibaidu" class="ibx-cal-apc-btn">视频追剧</a></div><div class="ibx-cal-triangle"><span class="ibx-cal-triangle-border"></span><span class="ibx-cal-triangle-ctx"></span></div></div></div><div class="ibx-cal-pop-mask"></div><div class="ibx-cal-tab clr"><div class="ibx-cal-tab-op clr"><a href="javascript:;" data-click="{&quot;act&quot;:&quot;cal_add_all&quot;}" class="ibx-cal-tab-add"></a><a href="javascript:;" data-click="{&quot;act&quot;:&quot;cal_conf&quot;}" class="ibx-cal-tab-conf"></a></div></div>
+                        
+                        
                     </div>
                 </div>
-                
+                </div>
             </div>
 
-            <div data-scroll-reveal="" class="row card-panel"  data-scroll-reveal-initialized="true" data-scroll-reveal-complete="true">
+            <div data-scroll-reveal="" class="row card-panel"  data-scroll-reveal-initialized="true" data-scroll-reveal-complete="true" >
                 <span class="rule-wrap"><a id="video" name="video" class="rule"></a></span>
                 <div class="col span_4_4">
                     <div class="ibx-even">
@@ -141,7 +156,7 @@
                         <div class="ibx-inner-title" id='fenlei'>
                             <a  target="_blank" href="http://v.baidu.com/" class="ibx-inner-title-ctx">媒体空间</a>
                             <ul class="ibx-inner-title-tab">
-                                <li  class="ibx-inner-title-tabitem ibx-video-my OP_LOG_TITLE">我的分类</li>
+                                <!-- <li  class="ibx-inner-title-tabitem ibx-video-my OP_LOG_TITLE">我的分类</li> -->
                                 <li  class="ibx-inner-title-tabitem ibx-video-hotTop OP_LOG_TITLE current">亲情推荐</li>
                             </ul>
                             <a herf='#' class="OP_LOG_TITLE card-enter-video-link" @click='miniPrograme' >关注我的小程序</a>
@@ -165,7 +180,7 @@
                     </div>
                 </div>
             </div>
-            <div data-scroll-reveal="" class="row card-panel" data-scroll-reveal-initialized="true" data-scroll-reveal-complete="true">
+            <div data-scroll-reveal="" class="row card-panel" data-scroll-reveal-initialized="true" data-scroll-reveal-complete="true" id="tuijian">
                 <span class="rule-wrap"><a id="xinwen" name="xinwen" class="rule"></a></span>
                 <div class="col span_4_4">
                     <div class="ibx-even">
@@ -173,16 +188,21 @@
                         <div class="ibx-inner-title">
                             <a target="_blank" href="http://xinwen.baidu.com/" class="ibx-inner-title-ctx">激情推荐</a>
                             <ul class="ibx-inner-title-tab">
-                                <li data-click="{&quot;act&quot;: &quot;card_xinwen_pernews&quot;}" class="ibx-inner-title-tabitem ibx-xinwen-pernews OP_LOG_TITLE current">工具类</li>
-                                <li data-click="{&quot;act&quot;: &quot;card_xinwen_hot&quot;}" class="ibx-inner-title-tabitem ibx-xinwen-hot OP_LOG_TITLE">生活类</li>
+                                <li data-click="{&quot;act&quot;: &quot;card_xinwen_pernews&quot;}" class="ibx-inner-title-tabitem ibx-xinwen-pernews OP_LOG_TITLE" @click='tools()' v-bind:class="{'current':selected ==1}">工具类</li>
+                                <li data-click="{&quot;act&quot;: &quot;card_xinwen_hot&quot;}" class="ibx-inner-title-tabitem ibx-xinwen-hot OP_LOG_TITLE" @click="life()" v-bind:class="{'current':selected ==2}">生活类</li>
                             </ul>
-                            <div class="xinwen-title-link-container OP_LOG_TITLE"><a href="http://app.news.baidu.com/?src=pctop" class="OP_LOG_TITLE" data-click="{&quot;act&quot;: &quot;card_xinwen_client&quot;}" target="_blank">关注我的公众号</a></div>
+                            <div class="xinwen-title-link-container OP_LOG_TITLE"><a href="javascript:void(0)" class="OP_LOG_TITLE" @click="gongzhong">关注我的公众号</a></div>
+                            <div style="width: 150px;height: 100px;z-index: 10;position: absolute;right: 0;top: 50px;" v-if="tag">
+                                <img src="/web/resources/4.jpg" style="width: 100px;height: 100px">
+                            </div>
                         </div>
                         <div class="ibx-inner-content" id="ibx-xinwen">
-                        <div id="xinwen-pernews" class="xinwen-pernews"><div class="xinwen-common-tab"><div class="xinwen-normal-top"><span class="xinwen-normal-top-title">推荐鸡汤</span><span class="xinwen-normal-top-line"></span></div><div class="ibx-card-pager"><span class="ibx-card-pager-prev"></span><span class="ibx-card-pager-item current" data-page="0"></span><span class="ibx-card-pager-next"></span></div></div>
+                        <div id="xinwen-pernews" class="xinwen-pernews"><div class="xinwen-common-tab"><div class="xinwen-normal-top"><span class="xinwen-normal-top-title">推荐鸡汤</span><span class="xinwen-normal-top-line"></span></div>
+                        <!-- <div class="ibx-card-pager"><span class="ibx-card-pager-prev"></span><span class="ibx-card-pager-item current" data-page="0"></span><span class="ibx-card-pager-next"></span></div> -->
+                        </div>
                         <div id="xinwen-pernews-main" class="xinwen-pernews-main">
                         <ul class="xinwen-normal-list xinwen-pernews-list" style="width: 976px; left: 0px;" id="hot_article">
-                            <li class="xinwen-pernews-item"  v-for="article in data_hot_article">
+                            <li class="xinwen-pernews-item"  v-for="article in item">
                                 <div class="xinwen-pernews-item-news"><a class="xinwen-pernews-item-link" target="_blank" href="http://tj.people.com.cn/n2/2018/0823/c375366-31968703.html"><img class="xinwen-pernews-item-img" :src="article.thumb" alt=""></a><div class="xinwen-pernews-item-detail detail-type-img"><a class="xinwen-pernews-item-title" target="_blank" href="http://tj.people.com.cn/n2/2018/0823/c375366-31968703.html" title="article.title">{{article.title}}</a>
                                     <!-- <p class="xinwen-pernews-item-info"><span class="xinwen-pernews-item-read">0</span><span class="xinwen-pernews-item-up">0</span><span class="xinwen-pernews-item-down">0</span></p> -->
                                 </div></div>
@@ -207,7 +227,9 @@
                             <li data-click="{&quot;act&quot;: &quot;card_koubei_hot&quot;}" class="ibx-inner-title-tabitem ibx-koubei-hot OP_LOG_TITLE"  v-bind:class="{'current':selected ==3}" @click="ganwu()">我的感悟</li>
                           </ul>
                             <div class="koubei-title-link-container OP_LOG_TITLE">
-                            <a href="http://koubei.baidu.com/truth/wall?fr=ibaidu" class="OP_LOG_TITLE enter-koubei-link koubei-wall-link" data-click="{&quot;act&quot;: &quot;card_open_koubei_wall&quot;}" target="_blank" style="display: none;">进入真相墙 &gt;</a><a href="http://koubei.baidu.com/home?fr=ibaidu" class="OP_LOG_TITLE enter-koubei-link koubei-home-link" data-click="{&quot;act&quot;: &quot;card_open_koubei_home&quot;}" target="_blank" style="display: inline;">进入我的口碑 &gt;</a></div></div><div class="ibx-inner-content" id="ibx-koubei"><div id="koubei-mine-container" class="koubei-mine-container "><div class="koubei-mine-top"><div class="ibx-card-pager"><span class="ibx-card-pager-prev"></span><span class="ibx-card-pager-item current" data-page="0"></span><span class="ibx-card-pager-item" data-page="1"></span><span class="ibx-card-pager-item" data-page="2"></span><span class="ibx-card-pager-next"></span></div></div><div id="koubei-mine-list">
+                            <!-- <a href="http://koubei.baidu.com/truth/wall?fr=ibaidu" class="OP_LOG_TITLE enter-koubei-link koubei-wall-link" data-click="{&quot;act&quot;: &quot;card_open_koubei_wall&quot;}" target="_blank" style="display: none;">进入真相墙 &gt;</a> -->
+                           <!--  <a href="http://koubei.baidu.com/home?fr=ibaidu" class="OP_LOG_TITLE enter-koubei-link koubei-home-link" data-click="{&quot;act&quot;: &quot;card_open_koubei_home&quot;}" target="_blank" style="display: inline;">进入我的口碑 &gt;</a> -->
+                            </div></div><div class="ibx-inner-content" id="ibx-koubei"><div id="koubei-mine-container" class="koubei-mine-container "><div class="koubei-mine-top"><div class="ibx-card-pager"><span class="ibx-card-pager-prev"></span><span class="ibx-card-pager-item current" data-page="0"></span><span class="ibx-card-pager-item" data-page="1"></span><span class="ibx-card-pager-item" data-page="2"></span><span class="ibx-card-pager-next"></span></div></div><div id="koubei-mine-list">
 
                             <ul class="koubei-mine-list"  >
                             <li class="koubei-mine-item" v-for="(value, key, index) in item"><div class="koubei-mine-item-container"><p class="koubei-mine-item-title"><a class="OP_LOG_TITLE" target="_blank" :title="value.title" :href="value.url" data-click="{&quot;act&quot;: &quot;card_koubei_item_message&quot;}" v-html="value.tag"></a></p><span class="koubei-mine-item-time">{{value.date}}</span></div></li>
@@ -242,7 +264,7 @@
 
     </div>
     <!-- 添加新页卡 bengin-->
-       <div id="tx-tj">
+     <!--   <div id="tx-tj">
          <div class="tx-tj-tj">
     	<div><input type="text" ref="title" placeholder="请在这里输入标题" class="title"  /></div>
     	<div><input type="text" v-model="author" placeholder="请输入作者"  class="author" /></div>
@@ -275,7 +297,7 @@
 		<div>来源</div>
 		<div><button @click="submit()">提交</button></div>
 		</div>
-    </div>
+    </div> -->
  <!-- 添加新页卡 end-->
 <style type="text/css">
 	#tx-tj{top:80px ;position: absolute;width:100%;margin:0 auto;height:100%;z-index: 6;}
@@ -429,12 +451,52 @@
     }
   })
    
+ var tuijian =new Vue({
+    el:'#tuijian',
+    data:{
+        tag:false,
+        selected:1,
+        item:''
 
-  var hot_article =new Vue({
-    el:"#hot_article",
-    data:data_hot_article,
+    },
+    mounted:function(){
+        url = '/index.php?app=web&act=index-initDATAT';
+            this.$http.post(url,{pid:7},{emulateJSON:true}).then(function(res){
+                console.log(res.body.data);
+                this.item =res.body.data
+            })
 
-  })
+    },
+    methods:{
+        gongzhong:function(){
+            if(this.tag ==false){
+                this.tag=true
+            }else{
+                this.tag=false
+            }
+        },
+        tools:function(){
+            this.selected =1;
+            url = '/index.php?app=web&act=index-tuijianCART';
+            this.$http.post(url,{selected:this.selected},{emulateJSON:true}).then(function(res){
+                console.log(res.body.data);
+                this.item =res.body.data
+            })
+
+        },
+        life:function(){
+            this.selected =2;
+            url = '/index.php?app=web&act=index-tuijianCART';
+            this.$http.post(url,{selected:this.selected},{emulateJSON:true}).then(function(res){
+                console.log(res.body.data);
+                this.item =res.body.data
+            })
+
+        }
+
+
+    }
+ })
 
   var editCard = new Vue({
   	el:"#editCard",
