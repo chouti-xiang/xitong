@@ -266,8 +266,8 @@
     <!-- 添加新页卡 bengin-->
        <div id="tx-tj">
          <div class="tx-tj-tj">
-    	<div><input type="text" ref="title" placeholder="请在这里输入标题" class="title" v-model="title" /></div>
-    	<div><input type="text" v-model="author" placeholder="请输入作者"  class="author" v-model="author"/></div>
+    	<div><input type="text" ref="title" placeholder="请在这里输入标题" class="title" v-model="title"/></div>
+    	<div><input type="text"  placeholder="请输入作者"  class="author" v-model="author"/></div>
 		  <script id="container" name="content" type="text/plain">
        <div>请从这里开始写正文</div> 
     </script>
@@ -288,9 +288,9 @@
 				<option value="2">百家讲坛</option>
 				<option value="3">醍醐灌顶</option>
 			</select>
-			<select name="category"  >
+			<select name="category" v-model="selectedC">
 				<option value="">选择一个分类</option>
-				<option v-for="(value, key, index) in FIDDATA" :value="key">{{value.cname}}</option>
+				<option v-for="(value, key, index) in FIDDATA" :value="value.id">{{value.cname}}</option>
 			</select>
 			</div>
 		</div>
@@ -298,6 +298,7 @@
 		<div><button @click="submit()">提交</button></div>
 		</div>
     </div>
+    
  <!-- 添加新页卡 end-->
 <style type="text/css">
 	#tx-tj{top:80px ;position: absolute;width:100%;margin:0 auto;height:100%;z-index: 6;}
@@ -353,14 +354,8 @@
         selected:1
     },
    mounted: function() {
-        // url = '/index.php?app=web&act=index-initDATA';
-        //     this.$http.get(url,{emulateJSON:true}).then(function(res){
-        //         console.log(res.body.data);
-        //         this.item =res.body.data
-        //     })
-  url = '/index.php?app=web&act=index-initDATAT';
+    url = '/index.php?app=web&act=index-initDATAT';
       this.$http.post(url,{pid:9},{emulateJSON:true}).then(function(res){
-                console.log(res.data.data);
                 this.item =res.data.data
             })
     },
@@ -369,43 +364,23 @@
             return  this.tag ;
         },
         gongzuo:function(){
-            // this.item =data_koubei;
             this.selected =1;
-            // url = '/index.php?app=web&act=index-addCART';
-            // this.$http.post(url,{selected:this.selected},{emulateJSON:true}).then(function(res){
-            //     console.log(res.body.data);
-            //     this.item =res.body.data
-            // })
-  url = '/index.php?app=web&act=index-initDATAT';
-    this.$http.post(url,{pid:9},{emulateJSON:true}).then(function(res){
-                console.log(res.data.data);
+            url = '/index.php?app=web&act=index-initDATAT';
+            this.$http.post(url,{pid:9},{emulateJSON:true}).then(function(res){
                 this.item =res.data.data
             })
         },
         shenghuo:function(){
             this.selected =2;
-            // url = '/index.php?app=web&act=index-addCART';
-            // this.$http.post(url,{selected:this.selected},{emulateJSON:true}).then(function(res){
-            //     console.log(res.body.data);
-            //     this.item =res.body.data
-            //     console.log(this.item)
-            // })
-  url = '/index.php?app=web&act=index-initDATAT';
-  this.$http.post(url,{pid:10},{emulateJSON:true}).then(function(res){
-                console.log(res.data.data);
+            url = '/index.php?app=web&act=index-initDATAT';
+            this.$http.post(url,{pid:10},{emulateJSON:true}).then(function(res){
                 this.item =res.data.data
             })
         },
         ganwu:function(){
             this.selected=3;
-            // url = '/index.php?app=web&act=index-addCART';
-            // this.$http.post(url,{selected:this.selected},{emulateJSON:true}).then(function(res){
-            //     console.log(res.body.data);
-            //     this.item =res.body.data
-            // })
-  url = '/index.php?app=web&act=index-initDATAT';
-  this.$http.post(url,{pid:11},{emulateJSON:true}).then(function(res){
-                console.log(res.data.data);
+            url = '/index.php?app=web&act=index-initDATAT';
+            this.$http.post(url,{pid:11},{emulateJSON:true}).then(function(res){
                 this.item =res.data.data
             })
         }
@@ -418,14 +393,8 @@
         selected:1
     },
   mounted: function() {
-        // url = '/index.php?app=web&act=index-initDATAM';
-        //     this.$http.get(url,{emulateJSON:true}).then(function(res){
-        //         console.log(res.body.data);
-        //         this.item =res.body.data
-        //     })
-  url = '/index.php?app=web&act=index-initDATAT';
+            url = '/index.php?app=web&act=index-initDATAT';
             this.$http.post(url,{pid:4},{emulateJSON:true}).then(function(res){
-                console.log(res.data.data);
                 this.item =res.data.data
             })
     },
@@ -435,28 +404,15 @@
         },
         movie:function(){
             this.selected =1;
-            // url = '/index.php?app=web&act=index-movieCART';
-            // this.$http.post(url,{selected:this.selected},{emulateJSON:true}).then(function(res){
-            //     console.log(res.body.data);
-            //     this.item =res.body.data
-            // })
-  url = '/index.php?app=web&act=index-initDATAT';
+            url = '/index.php?app=web&act=index-initDATAT';
             this.$http.post(url,{pid:4},{emulateJSON:true}).then(function(res){
-                console.log(res.data.data);
                 this.item =res.data.data
             })
         },
         dianshiju:function(){
             this.selected =2;
-            // url = '/index.php?app=web&act=index-movieCART';
-            // this.$http.post(url,{selected:this.selected},{emulateJSON:true}).then(function(res){
-            //     console.log(res.body.data);
-            //     this.item =res.body.data
-            //     console.log(this.item)
-            // })
-url = '/index.php?app=web&act=index-initDATAT';
+            url = '/index.php?app=web&act=index-initDATAT';
             this.$http.post(url,{pid:5},{emulateJSON:true}).then(function(res){
-                console.log(res.data.data);
                 this.item =res.data.data
             })
         }
@@ -490,7 +446,6 @@ url = '/index.php?app=web&act=index-initDATAT';
     mounted:function(){
         url = '/index.php?app=web&act=index-initDATAT';
             this.$http.post(url,{pid:7},{emulateJSON:true}).then(function(res){
-                console.log(res.data.data);
                 this.item =res.data.data
             })
 
@@ -505,28 +460,16 @@ url = '/index.php?app=web&act=index-initDATAT';
         },
         tools:function(){
             this.selected =1;
-            // url = '/index.php?app=web&act=index-tuijianCART';
-            // this.$http.post(url,{selected:this.selected},{emulateJSON:true}).then(function(res){
-            //     console.log(res.body.data);
-            //     this.item =res.body.data
-            // })
  url = '/index.php?app=web&act=index-initDATAT';
             this.$http.post(url,{pid:7},{emulateJSON:true}).then(function(res){
-                console.log(res.data.data);
                 this.item =res.data.data
             })
 
         },
         life:function(){
             this.selected =2;
-            // url = '/index.php?app=web&act=index-tuijianCART';
-            // this.$http.post(url,{selected:this.selected},{emulateJSON:true}).then(function(res){
-            //     console.log(res.body.data);
-            //     this.item =res.body.data
-            // })
             url = '/index.php?app=web&act=index-initDATAT';
             this.$http.post(url,{pid:8},{emulateJSON:true}).then(function(res){
-                console.log(res.data.data);
                 this.item =res.data.data
             })
 
@@ -555,7 +498,8 @@ url = '/index.php?app=web&act=index-initDATAT';
             content:'',
             author:'',
             thumb:'',
-            columnId:''
+            columnId:'',
+            selectedC:''
   },
   	mounted: function() {
         url = '/index.php?app=web&act=index-getPID';
@@ -565,69 +509,42 @@ url = '/index.php?app=web&act=index-initDATAT';
     },
   	methods:{
   		submit:function() {
-  			发送post请求，需要引用一个用于ajax的vue
-  			url = '/index.php?app=web&act=index-addCART';
-  			这个没用，只是为了训练赋值
-  			 this.author1 = this.author;
-  			 this.titile1 = this.$refs.title.value;
-  			 $refs.title.value 和微信小程序一样，把数据存放在全局变量中区，配合ref=“title”用，
-  			 this.author 用于双向绑定，v-model 模式，也可以用于取值
-  			this.$http.post(url, {title:this.$refs.title.value,author:this.author}, {emulateJSON:true}).then(function(res){
-  				console.log(this);
-  				console.log(res);
-  				console.log(1);
-  			},function(res){
-  				console.log(2);
-				console.log(res);
-				console.log(2);
-  			})
+  			// 发送post请求，需要引用一个用于ajax的vue
+  			// url = '/index.php?app=web&act=index-addCART';
+  			// 这个没用，只是为了训练赋值
+  			 // this.author1 = this.author;
+  			 // this.titile1 = this.$refs.title.value;
+  			 // $refs.title.value 和微信小程序一样，把数据存放在全局变量中区，配合ref=“title”用，
+  			 // this.author 用于双向绑定，v-model 模式，也可以用于取值
+  		// 	this.$http.post(url, {title:this.$refs.title.value,author:this.author}, {emulateJSON:true}).then(function(res){
+  		// 		
+  		// 	},function(res){
+  		// 		
+  		// 	})
 
-        // url ='/index.php?app=web&act=index-pull_article'
-        // this.$http.post()
+        url ='/index.php?app=web&act=index-pullArticle'
+        var title =this.title; 
+        var author =this.author;
+        var content = this.content;
+        var thumb = this.thumb;
+        var columnId = this.selectedC;
+        this.$http.post(url,{title:title,author:author,content:content,thumb:thumb,columnId:columnId}, {emulateJSON:true}).then(function(res){
+            if(res.data>0){
+                    alert('提交成功')
+                }
+        })
   		},
   		getPid:function() {
  			url = '/index.php?app=web&act=index-getPID';
   		
   			this.$http.post(url, {pid:this.selected}, {emulateJSON:true}).then(function(res){
   				this.FIDDATA = res.data.data;
-  				console.log(res.data.data);
   				
-  			},function(res){
-  				
-				console.log(res);
-				
   			})
+  			
  		}
   	}
   })
-  // var koubei1 =new Vue({
-  //   el:"#shenghuo",
-  //   data:function(){
-  //       return{
-  //           bbb:''
-  //       }
-  //   },
-  //   methods:{
-  //       shenghuo:function(){
-  //           alert(22222)
-  //           url = '/index.php?app=web&act=index-addCART';
-  //           this.$http.post(url,{emulateJSON:true}).then(function(res){
-  //               console.log(res.body.data);
-  //               this.bbb =res.body.data
-               
-  //           })
-
-  //       }
-  //       tell:function(){
-  //           eventBus.$emit("tellbbb",this.bbb)
-  //       }
-  //   },
-    
-  // })
-  // var eventBus =new Vue({
-  //   eventBus.$on("haha",function(){
-
-  //   })
-  // })
+ 
 </script>
 

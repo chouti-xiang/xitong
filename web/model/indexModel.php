@@ -19,10 +19,10 @@
 			return $data;
 		}
 		// 往数据库写文章
-		// function pull_article($data){
-		// 	$sql = "INSERT INTO hy_article (content,title,author,thumb,columnId) VALUES ($content,$title,$author,$thumb,$columnId)";
-		// 	$data=$this->insert($data,'hy_article');
-		// }
+		function pull_article($data){
+			$data=$this->insert($data,'hy_article');
+			return $data;
+		}
 
 	   //获取文章列表
 		function get_words_list($where){	
