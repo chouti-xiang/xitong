@@ -12,12 +12,17 @@
 			$data=$this->getAll($sql);
 			return $data;
 		}
+		// 获取文章列表
 		function get_article($where){
 			$sql = "SELECT * FROM hy_article WHERE columnId = '".$where."'";
-			print_r($sql);
 			$data=$this->getAll($sql);
 			return $data;
 		}
+		// 往数据库写文章
+		// function pull_article($data){
+		// 	$sql = "INSERT INTO hy_article (content,title,author,thumb,columnId) VALUES ($content,$title,$author,$thumb,$columnId)";
+		// 	$data=$this->insert($data,'hy_article');
+		// }
 
 	   //获取文章列表
 		function get_words_list($where){	
@@ -30,6 +35,7 @@
 			$data=$this->get('course_articles')->select();
 			return $data;
 		}
+
 
 		//查询广告数量
 		function get_advert_num(){
