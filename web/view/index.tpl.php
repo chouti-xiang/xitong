@@ -138,9 +138,52 @@
                      <!--    <a href="http://www.baidu.com/s?ie=utf-8&amp;wd=%E5%A4%A9%E6%B0%94" target="_blank" class="ibx-weather-temp"><img src="" class="ibx-weather-img" title="晴"><span class="ibx-weather-high" title="最高温度31°">31°</span>
                         <span class="ibx-weather-low" title="最低温度21°">21°</span></a> -->
                         </div>
-                        <div class="ibx-cal-box-r" id="ibx-cal-box-r"><ul class="ibx-cal-dlist clr" style="width: 338px; margin-left: 0px;"><li class="ibx-cal-ditem ibx-cal-digame"><a data-click="{&quot;act&quot;:&quot;cal_close&quot;}" href="javascript:;" class="ibx-cal-ditem-close" data-uuid="dcf4c7333855862bbf1a9b653c912cd7" data-uri="calendars/ucvs/activity/youxi"></a><div class="ibx-cal-ditem-game"><a href="http://koubei.baidu.com/activity/travel?fr=ibaidu" target="_blank"><img class="ibx-cal-game-img" src="yinxiang/koubei20160504.jpg"></a>
-                        <div class="ibx-cal-game-ctx"><div class="ibx-cal-ditem-bg"></div><div class="ibx-cal-game-detail"><a title="旅游维权来百度口碑" href="http://koubei.baidu.com/activity/travel?fr=ibaidu" target="_blank" class="ibx-cal-game-title">旅游维权来百度口碑</a></div></div></div></li>
-                        <li class="ibx-cal-ditem ibx-cal-diadd"><a data-click="{&quot;act&quot;:&quot;cal_add&quot;}" href="javascript:;" class="ibx-cal-ditem-addbtn"><span class="ibx-cal-ditem-addicon"></span>新建提醒</a></li></ul></div></div><div class="ibx-cal-dpage"><div class="ibx-cal-dpage-bg"></div><div class="ibx-cal-dpage-prev disabled"></div><div class="ibx-cal-dpage-next"></div></div></div><div id="ibx-cal-addPop" class="ibx-cal-addPop"><div class="ibx-cal-apc"><a href="javascript:;" class="ibx-cal-apc-close" title="关闭"></a><div class="ibx-cal-apc-title">新增订阅提醒</div><div class="ibx-cal-apc-con"><a href="javascript:;" data-click="{&quot;act&quot;:&quot;cal_add&quot;}" class="ibx-cal-apc-btn ibx-cal-apc-addbtn">日程</a><a target="_blank" data-click="{&quot;act&quot;:&quot;zhuiju_add&quot;}" href="http://v.baidu.com/?fr=ibaidu" class="ibx-cal-apc-btn">视频追剧</a></div><div class="ibx-cal-triangle"><span class="ibx-cal-triangle-border"></span><span class="ibx-cal-triangle-ctx"></span></div></div></div><div class="ibx-cal-pop-mask"></div><div class="ibx-cal-tab clr"><div class="ibx-cal-tab-op clr"><a href="javascript:;" data-click="{&quot;act&quot;:&quot;cal_add_all&quot;}" class="ibx-cal-tab-add"></a><a href="javascript:;" data-click="{&quot;act&quot;:&quot;cal_conf&quot;}" class="ibx-cal-tab-conf"></a></div></div>
+                        <div class="ibx-cal-box-r" id="ibx-cal-box-r">
+                            <ul class="ibx-cal-dlist clr" style="width: 338px; margin-left: 0px;">
+                                <li class="ibx-cal-ditem ibx-cal-digame" style="border:none;">
+                                    <!-- <a data-click="{&quot;act&quot;:&quot;cal_close&quot;}" href="javascript:;" class="ibx-cal-ditem-close" data-uuid="dcf4c7333855862bbf1a9b653c912cd7" data-uri="calendars/ucvs/activity/youxi"></a>
+                                    <div class="ibx-cal-ditem-game">
+                                        <a href="http://koubei.baidu.com/activity/travel?fr=ibaidu" target="_blank"><img class="ibx-cal-game-img" src="yinxiang/koubei20160504.jpg"></a>
+                        <div class="ibx-cal-game-ctx">
+                            <div class="ibx-cal-ditem-bg"></div>
+                            <div class="ibx-cal-game-detail">
+                                <a title="旅游维权来百度口碑" href="http://koubei.baidu.com/activity/travel?fr=ibaidu" target="_blank" class="ibx-cal-game-title">旅游维权来百度口碑</a>
+                            </div>
+                        </div></div> -->
+                    </li>
+                        <li class="ibx-cal-ditem ibx-cal-diadd">
+                            <a data-click="{&quot;act&quot;:&quot;cal_add&quot;}" href="javascript:;" class="ibx-cal-ditem-addbtn">
+                                <span class="ibx-cal-ditem-addicon"></span>新建提醒</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ibx-cal-dpage">
+                    <div class="ibx-cal-dpage-bg"></div>
+                    <div class="ibx-cal-dpage-prev disabled"></div>
+                    <div class="ibx-cal-dpage-next"></div>
+                </div>
+            </div>
+            <!-- <div id="ibx-cal-addPop" class="ibx-cal-addPop">
+                <div class="ibx-cal-apc">
+                    <a href="javascript:;" class="ibx-cal-apc-close" title="关闭"></a>
+                    <div class="ibx-cal-apc-title">新增订阅提醒</div>
+                    <div class="ibx-cal-apc-con">
+                        <a href="javascript:;" data-click="{&quot;act&quot;:&quot;cal_add&quot;}" class="ibx-cal-apc-btn ibx-cal-apc-addbtn">日程</a>
+                        <a target="_blank" data-click="{&quot;act&quot;:&quot;zhuiju_add&quot;}" href="http://v.baidu.com/?fr=ibaidu" class="ibx-cal-apc-btn">视频追剧</a>
+                    </div>
+                    <div class="ibx-cal-triangle">
+                        <span class="ibx-cal-triangle-border"></span>
+                        <span class="ibx-cal-triangle-ctx"></span>
+                    </div>
+                </div>
+            </div> -->
+            <div class="ibx-cal-pop-mask"></div>
+            <div class="ibx-cal-tab clr">
+                <div class="ibx-cal-tab-op clr">
+                    <a href="javascript:;" data-click="{&quot;act&quot;:&quot;cal_add_all&quot;}" class="ibx-cal-tab-add"></a><a href="javascript:;" data-click="{&quot;act&quot;:&quot;cal_conf&quot;}" class="ibx-cal-tab-conf"></a>
+                </div>
+            </div>
                         
                         
                     </div>
@@ -244,39 +287,8 @@
                             <div class="editCard-inner-tip"><i v-on:click="showCard"></i><p>添加卡片</p></div>
                         </div>
                         <!-- 添加新页卡 bengin-->
-        <div id="tx-tj" v-if='tag'>
-         <div class="tx-tj-tj">
-        <div><input type="text" ref="title" placeholder="请在这里输入标题" class="title" v-model="title"/></div>
-        <div><input type="text"  placeholder="请输入作者"  class="author" v-model="author"/></div>
-          <script id="container" name="content" type="text/plain">
-       <div>请从这里开始写正文</div> 
-    </script>
-
-        <div class="tx-tj-qt">
-            <div class="tx-tj-qt-titile">封面和摘要</div>
-            <div>
-            <div class="tx-tj-thumb"><div class="tx-tj-thumb-logo"><i class="icon-add_css"></i></div><span>选择封面</span></div>
-            <div class="tx-tj-description"><textarea placeholder="选填，如果不填写会默认抓取正文前54个字"></textarea></div>
-            </div>
-        </div>
-        <div class="tx-tj-category">
-            <div class="tx-tj-qt-titile">分类名称</div>
-            <div>
-            <select v-model="selected" name="category" @change="getPid">
-                <option value="">选择一个分类</option>
-                <option value="1">媒体空间</option>
-                <option value="2">百家讲坛</option>
-                <option value="3">醍醐灌顶</option>
-            </select>
-            <select name="category" v-model="selectedC">
-                <option value="">选择一个分类</option>
-                <option v-for="(value, key, index) in FIDDATA" :value="value.id">{{value.cname}}</option>
-            </select>
-            </div>
-        </div>
-        <div>来源</div>
-        <div><button @click="submit()">提交</button></div>
-        </div>
+        <div id="tx-tj" v-html="showC">
+         
     </div>
     
  <!-- 添加新页卡 end-->
@@ -422,15 +434,14 @@
   var fenlei =new Vue({
     el:'#fenlei',
     data:{
-        tag:false
+        tag:false,
     },
     methods:{
         miniPrograme:function(){
             if(this.tag==false){
-                alert(7777);
             this.tag=true;}
             else{
-                this.tag =false
+                this.tag =false;
             }
 
         }
@@ -484,7 +495,7 @@
   var editCard = new Vue({
   	el:"#editCard",
     data:{
-        tag:false,
+        showC:'',
         selected:'',
         FIDDATA:'',
         title:'',
@@ -503,12 +514,7 @@
     },
   	methods: {
   		showCard:function() {
-            if (this.tag==false) {
-                alert(77777)
-                this.tag =true;
-            }else{
-                this.tag=false;
-            };
+           
   		},
         submit:function() {
         url ='/index.php?app=web&act=index-pullArticle'
