@@ -130,13 +130,13 @@
                         <div class="ibx-inner" id="ibx-cal-content">
                         <div class="ibx-cal-box clr">
                         <div id="ibx-cal-box"><div class="ibx-cal-box-l">
-                        <!-- <iframe width="800" scrolling="no" height="120" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=19&icon=1&temp=1&num=1&site=12"></iframe> -->
-                        <a href="http://www.baidu.com/s?ie=utf-8&amp;wd=%E7%A9%BA%E6%B0%94%E8%B4%A8%E9%87%8F" target="_blank" class="ibx-weather-quality level0" title="空气质量：空气质量优，pm2.5：37">空气质量优</a>
+                        <iframe width="800" scrolling="no" height="120" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=19&icon=1&temp=1&num=1&site=12"></iframe>
+                       <!--  <a href="http://www.baidu.com/s?ie=utf-8&amp;wd=%E7%A9%BA%E6%B0%94%E8%B4%A8%E9%87%8F" target="_blank" class="ibx-weather-quality level0" title="空气质量：空气质量优，pm2.5：37">空气质量优</a>
                         <a data-click="{&quot;act&quot;:&quot;cal_local&quot;}" href="http://map.baidu.com/?newmap=1&amp;ie=utf-8&amp;from=ibaidu&amp;s=s%26wd%3D%E5%8C%97%E4%BA%AC" target="_blank" class="ibx-location">北京</a>
                         <div class="ibx-date">8月23日</div>
-                        <div class="ibx-lunar clr"><span class="ibx-day">周四</span><span class="ibx-luanr-ctx">七月十三</span></div>
-                        <a href="http://www.baidu.com/s?ie=utf-8&amp;wd=%E5%A4%A9%E6%B0%94" target="_blank" class="ibx-weather-temp"><img src="yinxiang/1.png" class="ibx-weather-img" title="晴"><span class="ibx-weather-high" title="最高温度31°">31°</span>
-                        <span class="ibx-weather-low" title="最低温度21°">21°</span></a>
+                        <div class="ibx-lunar clr"><span class="ibx-day">周四</span><span class="ibx-luanr-ctx">七月十三</span></div> -->
+                     <!--    <a href="http://www.baidu.com/s?ie=utf-8&amp;wd=%E5%A4%A9%E6%B0%94" target="_blank" class="ibx-weather-temp"><img src="" class="ibx-weather-img" title="晴"><span class="ibx-weather-high" title="最高温度31°">31°</span>
+                        <span class="ibx-weather-low" title="最低温度21°">21°</span></a> -->
                         </div>
                         <div class="ibx-cal-box-r" id="ibx-cal-box-r"><ul class="ibx-cal-dlist clr" style="width: 338px; margin-left: 0px;"><li class="ibx-cal-ditem ibx-cal-digame"><a data-click="{&quot;act&quot;:&quot;cal_close&quot;}" href="javascript:;" class="ibx-cal-ditem-close" data-uuid="dcf4c7333855862bbf1a9b653c912cd7" data-uri="calendars/ucvs/activity/youxi"></a><div class="ibx-cal-ditem-game"><a href="http://koubei.baidu.com/activity/travel?fr=ibaidu" target="_blank"><img class="ibx-cal-game-img" src="yinxiang/koubei20160504.jpg"></a>
                         <div class="ibx-cal-game-ctx"><div class="ibx-cal-ditem-bg"></div><div class="ibx-cal-game-detail"><a title="旅游维权来百度口碑" href="http://koubei.baidu.com/activity/travel?fr=ibaidu" target="_blank" class="ibx-cal-game-title">旅游维权来百度口碑</a></div></div></div></li>
@@ -240,9 +240,46 @@
                                                 <div data-scroll-reveal="" class="col span_4_2 OP_LOG_LINK" data-click="{&quot;mod&quot;:&quot;card_mgr&quot;,&quot;act&quot;:&quot;msg_click&quot;}" data-scroll-reveal-initialized="true" data-scroll-reveal-complete="true">
                     <div class="ibx-even editCard" id="editCard">
                         <div class="ibx-inner editCard-inner">
-                            <div class="editCard-inner-add" v-on:click="submit"></div>
-                            <div class="editCard-inner-tip"><i></i><p>添加卡片</p></div>
+                            <div class="editCard-inner-add"></div>
+                            <div class="editCard-inner-tip"><i v-on:click="showCard"></i><p>添加卡片</p></div>
                         </div>
+                        <!-- 添加新页卡 bengin-->
+        <div id="tx-tj" v-if='tag'>
+         <div class="tx-tj-tj">
+        <div><input type="text" ref="title" placeholder="请在这里输入标题" class="title" v-model="title"/></div>
+        <div><input type="text"  placeholder="请输入作者"  class="author" v-model="author"/></div>
+          <script id="container" name="content" type="text/plain">
+       <div>请从这里开始写正文</div> 
+    </script>
+
+        <div class="tx-tj-qt">
+            <div class="tx-tj-qt-titile">封面和摘要</div>
+            <div>
+            <div class="tx-tj-thumb"><div class="tx-tj-thumb-logo"><i class="icon-add_css"></i></div><span>选择封面</span></div>
+            <div class="tx-tj-description"><textarea placeholder="选填，如果不填写会默认抓取正文前54个字"></textarea></div>
+            </div>
+        </div>
+        <div class="tx-tj-category">
+            <div class="tx-tj-qt-titile">分类名称</div>
+            <div>
+            <select v-model="selected" name="category" @change="getPid">
+                <option value="">选择一个分类</option>
+                <option value="1">媒体空间</option>
+                <option value="2">百家讲坛</option>
+                <option value="3">醍醐灌顶</option>
+            </select>
+            <select name="category" v-model="selectedC">
+                <option value="">选择一个分类</option>
+                <option v-for="(value, key, index) in FIDDATA" :value="value.id">{{value.cname}}</option>
+            </select>
+            </div>
+        </div>
+        <div>来源</div>
+        <div><button @click="submit()">提交</button></div>
+        </div>
+    </div>
+    
+ <!-- 添加新页卡 end-->
 
                     </div>
                 </div>
@@ -263,43 +300,7 @@
 
 
     </div>
-    <!-- 添加新页卡 bengin-->
-       <div id="tx-tj">
-         <div class="tx-tj-tj">
-    	<div><input type="text" ref="title" placeholder="请在这里输入标题" class="title" v-model="title"/></div>
-    	<div><input type="text"  placeholder="请输入作者"  class="author" v-model="author"/></div>
-		  <script id="container" name="content" type="text/plain">
-       <div>请从这里开始写正文</div> 
-    </script>
 
-		<div class="tx-tj-qt">
-			<div class="tx-tj-qt-titile">封面和摘要</div>
-			<div>
-			<div class="tx-tj-thumb"><div class="tx-tj-thumb-logo"><i class="icon-add_css"></i></div><span>选择封面</span></div>
-			<div class="tx-tj-description"><textarea placeholder="选填，如果不填写会默认抓取正文前54个字"></textarea></div>
-			</div>
-		</div>
-		<div class="tx-tj-category">
-			<div class="tx-tj-qt-titile">分类名称</div>
-			<div>
-			<select v-model="selected" name="category" @change="getPid">
-				<option value="">选择一个分类</option>
-				<option value="1">媒体空间</option>
-				<option value="2">百家讲坛</option>
-				<option value="3">醍醐灌顶</option>
-			</select>
-			<select name="category" v-model="selectedC">
-				<option value="">选择一个分类</option>
-				<option v-for="(value, key, index) in FIDDATA" :value="value.id">{{value.cname}}</option>
-			</select>
-			</div>
-		</div>
-		<div>来源</div>
-		<div><button @click="submit()">提交</button></div>
-		</div>
-    </div>
-    
- <!-- 添加新页卡 end-->
 <style type="text/css">
 	#tx-tj{top:80px ;position: absolute;width:100%;margin:0 auto;height:100%;z-index: 6;}
 	.tx-tj-tj{width: 1000px;margin:0 auto;background-color: white;border-left:1px solid #ddd;border-right:1px solid #ddd;}
@@ -328,7 +329,7 @@
 
 </body></html>
 <script type="text/javascript">
-    <!-- 实例化编辑器 -->
+     // 实例化编辑器
    var ue = UE.getEditor('container',{
    	initialFrameHeight:300,
    	autoFloatEnabled:true
@@ -336,7 +337,7 @@
    });
     
  
- 
+ // 
   var geren =new Vue({
     el:'#geren',
     data:{
@@ -426,6 +427,7 @@
     methods:{
         miniPrograme:function(){
             if(this.tag==false){
+                alert(7777);
             this.tag=true;}
             else{
                 this.tag =false
@@ -481,34 +483,82 @@
 
   var editCard = new Vue({
   	el:"#editCard",
-  	methods: {
-  		submit:function() {
-  			alert(1)
-  		}
-  	}
-  })
+    data:{
+        tag:false,
+        selected:'',
+        FIDDATA:'',
+        title:'',
+        content:'',
+        author:'',
+        thumb:'',
+        columnId:'',
+        selectedC:''
 
-
-  var tx = new Vue({
-  	el:"#tx-tj",
-  	data:{
-        title1:null,author1:null,author:'',selected:'',
-            FIDDATA:'',
-            title:'',
-            content:'',
-            author:'',
-            thumb:'',
-            columnId:'',
-            selectedC:''
-  },
-  	mounted: function() {
+    },
+    mounted: function() {
         url = '/index.php?app=web&act=index-getPID';
         this.$http.get(url,{emulateJSON:true}).then(function(res){
             this.FIDDATA =res.body.data;
         })
     },
-  	methods:{
-  		submit:function() {
+  	methods: {
+  		showCard:function() {
+            if (this.tag==false) {
+                alert(77777)
+                this.tag =true;
+            }else{
+                this.tag=false;
+            };
+  		},
+        submit:function() {
+        url ='/index.php?app=web&act=index-pullArticle'
+        var title =this.title; 
+        var author =this.author;
+        var content = this.content;
+        var thumb = this.thumb;
+        var columnId = this.selectedC;
+        this.$http.post(url,{title:title,author:author,content:content,thumb:thumb,columnId:columnId}, {emulateJSON:true}).then(function(res){
+            if(res.data>0){
+                    alert('提交成功')
+                }
+        })
+        },
+        getPid:function() {
+            url = '/index.php?app=web&act=index-getPID';
+        
+            this.$http.post(url, {pid:this.selected}, {emulateJSON:true}).then(function(res){
+                this.FIDDATA = res.data.data;
+                
+            })
+            
+        }
+    }
+
+
+  	
+  })
+
+
+  // var tx = new Vue({
+  // 	el:"#tx-tj",
+  // 	data:{
+  //           selected:'',
+  //           FIDDATA:'',
+  //           title:'',
+  //           content:'',
+  //           author:'',
+  //           thumb:'',
+  //           columnId:'',
+  //           selectedC:''
+  // },
+  // 	mounted: function() {
+  //       url = '/index.php?app=web&act=index-getPID';
+  //       this.$http.get(url,{emulateJSON:true}).then(function(res){
+  //           this.FIDDATA =res.body.data;
+  //       })
+  //   },
+  // 	methods:{
+  // 		submit:function() {
   			// 发送post请求，需要引用一个用于ajax的vue
   			// url = '/index.php?app=web&act=index-addCART';
   			// 这个没用，只是为了训练赋值
@@ -522,29 +572,29 @@
   		// 		
   		// 	})
 
-        url ='/index.php?app=web&act=index-pullArticle'
-        var title =this.title; 
-        var author =this.author;
-        var content = this.content;
-        var thumb = this.thumb;
-        var columnId = this.selectedC;
-        this.$http.post(url,{title:title,author:author,content:content,thumb:thumb,columnId:columnId}, {emulateJSON:true}).then(function(res){
-            if(res.data>0){
-                    alert('提交成功')
-                }
-        })
-  		},
-  		getPid:function() {
- 			url = '/index.php?app=web&act=index-getPID';
+   //      url ='/index.php?app=web&act=index-pullArticle'
+   //      var title =this.title; 
+   //      var author =this.author;
+   //      var content = this.content;
+   //      var thumb = this.thumb;
+   //      var columnId = this.selectedC;
+   //      this.$http.post(url,{title:title,author:author,content:content,thumb:thumb,columnId:columnId}, {emulateJSON:true}).then(function(res){
+   //          if(res.data>0){
+   //                  alert('提交成功')
+   //              }
+   //      })
+  	// 	},
+  	// 	getPid:function() {
+ 		// 	url = '/index.php?app=web&act=index-getPID';
   		
-  			this.$http.post(url, {pid:this.selected}, {emulateJSON:true}).then(function(res){
-  				this.FIDDATA = res.data.data;
+  	// 		this.$http.post(url, {pid:this.selected}, {emulateJSON:true}).then(function(res){
+  	// 			this.FIDDATA = res.data.data;
   				
-  			})
+  	// 		})
   			
- 		}
-  	}
-  })
+ 		// }
+  	// }
+  // })
  
 </script>
 

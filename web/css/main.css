@@ -422,7 +422,7 @@ body{background-color:#eee}
 .editCard-inner:active{color:#000}
 .editCard-inner:active .editCard-inner-add{background-position:center -301px}
 .editCard-inner-first:hover{height:331px}
-.editCard-inner-add{background:url(img/add_cal.png) center 0 no-repeat;margin-top:108px;height:50px;margin-bottom:35px}
+.editCard-inner-add{background:url(img/add_cal.png) center 0 no-repeat;margin-top:108px;height:20px;margin-bottom:35px}
 .ibx-inner-card-title{position:relative;height:18px;line-height:18px;*zoom:1;margin-bottom:16px}
 .ibx-inner-card-title:after,.ibx-inner-card-title:before{display:table;content:""}
 .ibx-inner-card-title:after{clear:both}
