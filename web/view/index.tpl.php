@@ -244,13 +244,12 @@
                             <div class="editCard-inner-tip"><i v-on:click="showCard"></i><p>添加卡片</p></div>
                         </div>
                         <!-- 添加新页卡 bengin-->
-        <div id="tx-tj" v-if='tag'>
+        <div id="tx-tj" style="position: absolute;z-index: 99;" >
          <div class="tx-tj-tj">
         <div><input type="text" ref="title" placeholder="请在这里输入标题" class="title" v-model="title"/></div>
         <div><input type="text"  placeholder="请输入作者"  class="author" v-model="author"/></div>
-          <script id="container" name="content" type="text/plain">
-       <div>请从这里开始写正文</div> 
-    </script>
+        <script id="container" name="content" type="text/plain" > <div>请从这里开始写正文</div> </script>
+ 
 
         <div class="tx-tj-qt">
             <div class="tx-tj-qt-titile">封面和摘要</div>
@@ -329,14 +328,14 @@
 
 </body></html>
 <script type="text/javascript">
-     // 实例化编辑器
-   var ue = UE.getEditor('container',{
-   	initialFrameHeight:300,
-   	autoFloatEnabled:true
 
-   });
-    
- 
+     //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    var ue = UE.getEditor('container',{
+    	initialFrameHeight:300,
+    	autoFloatEnabled:true
+    });
+
  // 
   var geren =new Vue({
     el:'#geren',
@@ -514,9 +513,10 @@
         url ='/index.php?app=web&act=index-pullArticle'
         var title =this.title; 
         var author =this.author;
-        var content = this.content;
+        var content = UE.getEditor('container').getContent();
         var thumb = this.thumb;
         var columnId = this.selectedC;
+        alert(content);
         this.$http.post(url,{title:title,author:author,content:content,thumb:thumb,columnId:columnId}, {emulateJSON:true}).then(function(res){
             if(res.data>0){
                     alert('提交成功')
