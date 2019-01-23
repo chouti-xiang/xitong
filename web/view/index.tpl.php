@@ -244,8 +244,18 @@
                             <div class="editCard-inner-tip"><i v-on:click="showCard"></i><p>添加卡片</p></div>
                         </div>
                         <!-- 添加新页卡 bengin-->
-        <div id="tx-tj" style="position: absolute;z-index: 99;" >
-         <div class="tx-tj-tj">
+                        <!-- style="position: absolute;z-index: 99;"  -->
+        <div id="tx-tj">
+            <div class="tx-tj-tj">
+        <div><input type="text" ref="title" placeholder="请在这里输入标题" class="title" v-model="title"/></div>
+        <div><input type="text"  placeholder="请输入作者"  class="author" v-model="author"/></div>
+        <script id="container" name="content" type="text/plain" > <div>请从这里开始写正文</div> </script>
+ 
+
+        <div class="tx-tj-qt">
+            <div class="tx-tj-qt-titile">封面和摘要</div>
+            <div>
+            <div class="tx-tj-thumb"><div class="tx-tj-thumb-logo"><i class="icon-add_css"></i></div><span>选择封面</span><div class="tx-tj-tj">
         <div><input type="text" ref="title" placeholder="请在这里输入标题" class="title" v-model="title"/></div>
         <div><input type="text"  placeholder="请输入作者"  class="author" v-model="author"/></div>
         <script id="container" name="content" type="text/plain" > <div>请从这里开始写正文</div> </script>
@@ -255,6 +265,14 @@
             <div class="tx-tj-qt-titile">封面和摘要</div>
             <div>
             <div class="tx-tj-thumb"><div class="tx-tj-thumb-logo"><i class="icon-add_css"></i></div><span>选择封面</span></div>
+            <div class="tx-tj-description"><textarea placeholder="选填，如果不填写会默认抓取正文前54个字"></textarea></div>
+            </div>
+        </div>
+      
+       
+       
+        </div></div>
+
             <div class="tx-tj-description"><textarea placeholder="选填，如果不填写会默认抓取正文前54个字"></textarea></div>
             </div>
         </div>
@@ -276,6 +294,7 @@
         <div>来源</div>
         <div><button @click="submit()">提交</button></div>
         </div>
+         
     </div>
     
  <!-- 添加新页卡 end-->
@@ -312,6 +331,14 @@
     .tx-tj-thumb .tx-tj-thumb-logo{margin-top:13px;}
 /*这个地方使用了伪类 如:before，content就是为了美化标签做的背景，如果不想美化，只用线条，那么这个写空，然后给长宽*/
 	.tx-tj-thumb i{clear: both;}
+    #thumb{
+        height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    }
 	.tx-tj-qt i{display: inline-block;width: 24px;height: 24px;position: relative;}
     .tx-tj-qt i:before{width: 20px;height: 2px;left: 2px;top: 11px;content: "";display: block;position: absolute;background-color: #43b548;}
     .tx-tj-qt i:after{width: 2px;height: 20px;left: 11px;top: 2px;content: "";display: block;position: absolute;background-color: #43b548;}
@@ -323,7 +350,8 @@
     .editCard-inner-tip i:after{width: 4px;height: 40px;left: 22px;top: 4px;content: "";display: block;position: absolute;background-color: #43b548;}
     /*分类*/
     .tx-tj-category {margin-left:10px;}
-    .tx-tj-category .tx-tj-qt-titile{margin:10px 0;}                
+    .tx-tj-category .tx-tj-qt-titile{margin:10px 0;}
+
 </style>
 
 </body></html>
@@ -483,7 +511,7 @@
   var editCard = new Vue({
   	el:"#editCard",
     data:{
-        tag:false,
+        tag:'',
         selected:'',
         FIDDATA:'',
         title:'',
@@ -502,12 +530,7 @@
     },
   	methods: {
   		showCard:function() {
-            if (this.tag==false) {
-                alert(77777)
-                this.tag =true;
-            }else{
-                this.tag=false;
-            };
+           this.tag = ''
   		},
         submit:function() {
         url ='/index.php?app=web&act=index-pullArticle'
