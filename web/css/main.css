@@ -1399,3 +1399,9 @@ a.ibx-cal-dical-timetype:hover{text-decoration:underline}
 .ibx-hai-link a{color:#4b4b4b;cursor:pointer;font-size:14px;text-decoration:none}
 .ibx-hai-link a:hover{text-decoration:underline}
 .ibx-hai-space{margin-left:33%;border-left:1px solid #CDCFD1;width:0;height:48px}
+.noneC{
+	display: none;
+}
+.showC{
+	display: block;
+}

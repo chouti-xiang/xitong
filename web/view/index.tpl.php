@@ -138,9 +138,52 @@
                      <!--    <a href="http://www.baidu.com/s?ie=utf-8&amp;wd=%E5%A4%A9%E6%B0%94" target="_blank" class="ibx-weather-temp"><img src="" class="ibx-weather-img" title="晴"><span class="ibx-weather-high" title="最高温度31°">31°</span>
                         <span class="ibx-weather-low" title="最低温度21°">21°</span></a> -->
                         </div>
-                        <div class="ibx-cal-box-r" id="ibx-cal-box-r"><ul class="ibx-cal-dlist clr" style="width: 338px; margin-left: 0px;"><li class="ibx-cal-ditem ibx-cal-digame"><a data-click="{&quot;act&quot;:&quot;cal_close&quot;}" href="javascript:;" class="ibx-cal-ditem-close" data-uuid="dcf4c7333855862bbf1a9b653c912cd7" data-uri="calendars/ucvs/activity/youxi"></a><div class="ibx-cal-ditem-game"><a href="http://koubei.baidu.com/activity/travel?fr=ibaidu" target="_blank"><img class="ibx-cal-game-img" src="yinxiang/koubei20160504.jpg"></a>
-                        <div class="ibx-cal-game-ctx"><div class="ibx-cal-ditem-bg"></div><div class="ibx-cal-game-detail"><a title="旅游维权来百度口碑" href="http://koubei.baidu.com/activity/travel?fr=ibaidu" target="_blank" class="ibx-cal-game-title">旅游维权来百度口碑</a></div></div></div></li>
-                        <li class="ibx-cal-ditem ibx-cal-diadd"><a data-click="{&quot;act&quot;:&quot;cal_add&quot;}" href="javascript:;" class="ibx-cal-ditem-addbtn"><span class="ibx-cal-ditem-addicon"></span>新建提醒</a></li></ul></div></div><div class="ibx-cal-dpage"><div class="ibx-cal-dpage-bg"></div><div class="ibx-cal-dpage-prev disabled"></div><div class="ibx-cal-dpage-next"></div></div></div><div id="ibx-cal-addPop" class="ibx-cal-addPop"><div class="ibx-cal-apc"><a href="javascript:;" class="ibx-cal-apc-close" title="关闭"></a><div class="ibx-cal-apc-title">新增订阅提醒</div><div class="ibx-cal-apc-con"><a href="javascript:;" data-click="{&quot;act&quot;:&quot;cal_add&quot;}" class="ibx-cal-apc-btn ibx-cal-apc-addbtn">日程</a><a target="_blank" data-click="{&quot;act&quot;:&quot;zhuiju_add&quot;}" href="http://v.baidu.com/?fr=ibaidu" class="ibx-cal-apc-btn">视频追剧</a></div><div class="ibx-cal-triangle"><span class="ibx-cal-triangle-border"></span><span class="ibx-cal-triangle-ctx"></span></div></div></div><div class="ibx-cal-pop-mask"></div><div class="ibx-cal-tab clr"><div class="ibx-cal-tab-op clr"><a href="javascript:;" data-click="{&quot;act&quot;:&quot;cal_add_all&quot;}" class="ibx-cal-tab-add"></a><a href="javascript:;" data-click="{&quot;act&quot;:&quot;cal_conf&quot;}" class="ibx-cal-tab-conf"></a></div></div>
+                        <div class="ibx-cal-box-r" id="ibx-cal-box-r">
+                            <ul class="ibx-cal-dlist clr" style="width: 338px; margin-left: 0px;">
+                                <li class="ibx-cal-ditem ibx-cal-digame" style="border:none">
+                                   <!--  <a data-click="{&quot;act&quot;:&quot;cal_close&quot;}" href="javascript:;" class="ibx-cal-ditem-close" data-uuid="dcf4c7333855862bbf1a9b653c912cd7" data-uri="calendars/ucvs/activity/youxi"></a>
+                                    <div class="ibx-cal-ditem-game"><a href="http://koubei.baidu.com/activity/travel?fr=ibaidu" target="_blank"><img class="ibx-cal-game-img" src="yinxiang/koubei20160504.jpg"></a>
+                        <div class="ibx-cal-game-ctx">
+                            <div class="ibx-cal-ditem-bg"></div>
+                            <div class="ibx-cal-game-detail">
+                                <a title="旅游维权来百度口碑" href="http://koubei.baidu.com/activity/travel?fr=ibaidu" target="_blank" class="ibx-cal-game-title">旅游维权来百度口碑</a>
+                            </div>
+                        </div>
+                    </div> -->
+                </li>
+                        <li class="ibx-cal-ditem ibx-cal-diadd">
+                            <a data-click="{&quot;act&quot;:&quot;cal_add&quot;}" href="javascript:;" class="ibx-cal-ditem-addbtn">
+                                <span class="ibx-cal-ditem-addicon"></span>新建提醒</a>
+                            </li>
+                        </ul>
+                    </div></div>
+                    <!-- <div class="ibx-cal-dpage">
+                        <div class="ibx-cal-dpage-bg"></div>
+                        <div class="ibx-cal-dpage-prev disabled"></div>
+                        <div class="ibx-cal-dpage-next"></div>
+                    </div> -->
+                </div>
+                    <!-- <div id="ibx-cal-addPop" class="ibx-cal-addPop">
+                        <div class="ibx-cal-apc">
+                            <a href="javascript:;" class="ibx-cal-apc-close" title="关闭"></a>
+                            <div class="ibx-cal-apc-title">新增订阅提醒</div>
+                            <div class="ibx-cal-apc-con">
+                                <a href="javascript:;" data-click="{&quot;act&quot;:&quot;cal_add&quot;}" class="ibx-cal-apc-btn ibx-cal-apc-addbtn">日程</a><a target="_blank" data-click="{&quot;act&quot;:&quot;zhuiju_add&quot;}" href="http://v.baidu.com/?fr=ibaidu" class="ibx-cal-apc-btn">视频追剧</a>
+                            </div>
+                            <div class="ibx-cal-triangle">
+                                <span class="ibx-cal-triangle-border"></span>
+                                <span class="ibx-cal-triangle-ctx"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibx-cal-pop-mask">
+                    </div> -->
+                   <!--  <div class="ibx-cal-tab clr">
+                        <div class="ibx-cal-tab-op clr">
+                            <a href="javascript:;" data-click="{&quot;act&quot;:&quot;cal_add_all&quot;}" class="ibx-cal-tab-add"></a>
+                            <a href="javascript:;" data-click="{&quot;act&quot;:&quot;cal_conf&quot;}" class="ibx-cal-tab-conf"></a>
+                        </div>
+                    </div> -->
                         
                         
                     </div>
@@ -244,7 +287,7 @@
                             <div class="editCard-inner-tip"><i v-on:click="showCard"></i><p>添加卡片</p></div>
                         </div>
                         <!-- 添加新页卡 bengin-->
-        <div id="tx-tj" v-if='tag'>
+        <div id="tx-tj" :class="editor?'showC':'noneC'">
          <div class="tx-tj-tj">
         <div><input type="text" ref="title" placeholder="请在这里输入标题" class="title" v-model="title"/></div>
         <div><input type="text"  placeholder="请输入作者"  class="author" v-model="author"/></div>
@@ -484,7 +527,8 @@
   var editCard = new Vue({
   	el:"#editCard",
     data:{
-        tag:false,
+        editor:false,
+        classEditor:'noneC',
         selected:'',
         FIDDATA:'',
         title:'',
@@ -503,12 +547,14 @@
     },
   	methods: {
   		showCard:function() {
-            if (this.tag==false) {
-                alert(77777)
-                this.tag =true;
-            }else{
-                this.tag=false;
-            };
+           if(this.editor ==false){
+            this.editor =true
+            this.classEditor = noneC
+
+           }else{
+            this.editor =false
+            this.classEditor = showC
+           }
   		},
         submit:function() {
         url ='/index.php?app=web&act=index-pullArticle'
@@ -528,73 +574,9 @@
         
             this.$http.post(url, {pid:this.selected}, {emulateJSON:true}).then(function(res){
                 this.FIDDATA = res.data.data;
-                
             })
-            
         }
     }
-
-
-  	
   })
-
-
-  // var tx = new Vue({
-  // 	el:"#tx-tj",
-  // 	data:{
-  //           selected:'',
-  //           FIDDATA:'',
-  //           title:'',
-  //           content:'',
-  //           author:'',
-  //           thumb:'',
-  //           columnId:'',
-  //           selectedC:''
-  // },
-  // 	mounted: function() {
-  //       url = '/index.php?app=web&act=index-getPID';
-  //       this.$http.get(url,{emulateJSON:true}).then(function(res){
-  //           this.FIDDATA =res.body.data;
-  //       })
-  //   },
-  // 	methods:{
-  // 		submit:function() {
-  			// 发送post请求，需要引用一个用于ajax的vue
-  			// url = '/index.php?app=web&act=index-addCART';
-  			// 这个没用，只是为了训练赋值
-  			 // this.author1 = this.author;
-  			 // this.titile1 = this.$refs.title.value;
-  			 // $refs.title.value 和微信小程序一样，把数据存放在全局变量中区，配合ref=“title”用，
-  			 // this.author 用于双向绑定，v-model 模式，也可以用于取值
-  		// 	this.$http.post(url, {title:this.$refs.title.value,author:this.author}, {emulateJSON:true}).then(function(res){
-  		// 		
-  		// 	},function(res){
-  		// 		
-  		// 	})
-
-   //      url ='/index.php?app=web&act=index-pullArticle'
-   //      var title =this.title; 
-   //      var author =this.author;
-   //      var content = this.content;
-   //      var thumb = this.thumb;
-   //      var columnId = this.selectedC;
-   //      this.$http.post(url,{title:title,author:author,content:content,thumb:thumb,columnId:columnId}, {emulateJSON:true}).then(function(res){
-   //          if(res.data>0){
-   //                  alert('提交成功')
-   //              }
-   //      })
-  	// 	},
-  	// 	getPid:function() {
- 		// 	url = '/index.php?app=web&act=index-getPID';
-  		
-  	// 		this.$http.post(url, {pid:this.selected}, {emulateJSON:true}).then(function(res){
-  	// 			this.FIDDATA = res.data.data;
-  				
-  	// 		})
-  			
- 		// }
-  	// }
-  // })
- 
 </script>
 
