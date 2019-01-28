@@ -12,6 +12,14 @@
 			$data=$this->getAll($sql);
 			return $data;
 		}
+		// 检查用户登录
+		function checkLogin($name,$password){
+			$sql ="SELECT name FROM hy_users WHERE name = '".$name."' AND password ='".$password."'";
+			$data =$this->getRow($sql);
+			// print_r($data);
+			return $data;
+			
+		}
 		// 获取文章列表
 		function get_article($where){
 			$sql = "SELECT * FROM hy_article WHERE columnId = '".$where."'";

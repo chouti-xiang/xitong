@@ -11,8 +11,8 @@
  <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
  <!-- <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script> -->
   <script src="/js/jquery-1.7.1.min.js"></script>
- <script src="/js/utf8-php/ueditor.config.js"></script>
- <script src="/js/utf8-php/ueditor.all.js"></script>
+<!--  <script src="/js/utf8-php/ueditor.config.js"></script>
+ <script src="/js/utf8-php/ueditor.all.js"></script> -->
 
 </head>
 
@@ -20,15 +20,22 @@
     <div class="main-wrap">
         <header data-click="{&quot;mod&quot;:&quot;header&quot;}">
             <div class="header-stackup" data-scroll-reveal="enter from the top over 0.66s" data-scroll-reveal-initialized="true" data-scroll-reveal-complete="true">
-                <div class="ibx-container row clr">
+                <div class="ibx-container row clr" id="toubu">
                     <a href="http://i.baidu.com/" target="_self" class="header-logo header-logo-index"></a>
                     <div class="header-tool header-tool-user">
-                        <a class="header-tu-img header-tool-user-nick" href="javascript:;">
-                            kaka
+                        <a class="header-tu-img header-tool-user-nick" href="/index.php?app=web&act=index-login">
+                            <?php if($_SESSION['name'] ==null){
+                                echo "请登录";
+                                }else{
+                                    echo $_SESSION['name'];
+                                    }; ?>
                         </a>
-                        <div class="header-tc-content">
-                            <a class="header-tuc-logout" href="#">退出帐号</a>
+                        <?php if($_SESSION['name']){ ?>
+                        <div class="header-tc-content" style="display: block;">
+                            <a class="header-tuc-logout" href="/index.php?app=web&act=index-logout">
+                            退出帐号</a>
                         </div>
+                        <?php } ?>
                     </div>
                    
 
@@ -281,56 +288,15 @@
                     </div>
                 </div>
                                                 <div data-scroll-reveal="" class="col span_4_2 OP_LOG_LINK" data-click="{&quot;mod&quot;:&quot;card_mgr&quot;,&quot;act&quot;:&quot;msg_click&quot;}" data-scroll-reveal-initialized="true" data-scroll-reveal-complete="true">
-                    <div class="ibx-even editCard" id="editCard">
+                    <a href="/index.php?app=web&act=index-add" style="display: block;" v-on:click="toUrl"><div class="ibx-even editCard" id="editCard">
                         <div class="ibx-inner editCard-inner">
                             <div class="editCard-inner-add"></div>
-                            <div class="editCard-inner-tip"><i v-on:click="showCard"></i><p>添加卡片</p></div>
+                            <div class="editCard-inner-tip"><i ></i><p>添加卡片</p></div>
                         </div>
-                        <!-- 背景遮罩 -->
-                        <div class="zhezhao" :class="editor?'showC':'noneC'"></div>
-                        <!-- 关闭按钮 -->
-                        <div class="closeB" :class="editor?'showC':'noneC'" @click="close()"><img src="/web/resources/close.png"></div>
-                        <!-- 添加新页卡 bengin-->
-        <div id="tx-tj" :class="editor?'showC':'noneC'">
-         <div class="tx-tj-tj">
-        <div><input type="text" ref="title" placeholder="请在这里输入标题" class="title" v-model="title"/></div>
-        <div><input type="text"  placeholder="请输入作者"  class="author" v-model="author"/></div>
-          <script id="container" name="content" type="text/plain">
-       <div>请从这里开始写正文</div> 
-    </script>
-
-        <div class="tx-tj-qt">
-            <div class="tx-tj-qt-titile">封面和摘要</div>
-            <div>
-            <div class="tx-tj-thumb"><div class="tx-tj-thumb-logo"><i class="icon-add_css"></i></div><span>选择封面</span>
-            <input type="file" id="thumb" name="thumb" accept="image/gif, image/jpeg, image/png, image/jpg">
-        </div>
-            <div class="tx-tj-description"><textarea placeholder="选填，如果不填写会默认抓取正文前54个字"></textarea></div>
-            </div>
-        </div>
-        <div class="tx-tj-category">
-            <div class="tx-tj-qt-titile">分类名称</div>
-            <div>
-            <select v-model="selected" name="category" @change="getPid">
-                <option value="">选择一个分类</option>
-                <option value="1">媒体空间</option>
-                <option value="2">百家讲坛</option>
-                <option value="3">醍醐灌顶</option>
-            </select>
-            <select name="category" v-model="selectedC">
-                <option value="">选择一个分类</option>
-                <option v-for="(value, key, index) in FIDDATA" :value="value.id">{{value.cname}}</option>
-            </select>
-            </div>
-        </div>
-        <div>来源</div>
-        <div><button @click="submit()">提交</button></div>
-        </div>
-    </div>
-    
- <!-- 添加新页卡 end-->
-
-                    </div>
+                      
+                        </div>
+                       
+                    </div></a>
                 </div>
                             </div>
 
@@ -349,50 +315,28 @@
 
 
     </div>
-
 <style type="text/css">
-	#tx-tj{top:80px ;position:fixed;margin:0 auto;z-index: 160;left: 10%;}
-	.tx-tj-tj{width: 1000px;margin:0 auto;background-color: white;border-left:1px solid #ddd;border-right:1px solid #ddd;}
-	.tx-tj-qt{border-top: 1px solid #ebebeb;padding: 10px 10px 25px 10px ;display: table;}
-	.tx-tj-qt .tx-tj-qt-titile{margin:15px 0;}
-	.title{ margin: 2px 0;padding-right: 98px;box-sizing: border-box;font-size: 24px;font-weight: 500;height: 46px;line-height: 46px;width: 100%;background-color: transparent;border: 0;outline: 0;padding-left: 7px;}
-    .author{padding-left: 7px;margin: 2px 0;padding-right: 98px;box-sizing: border-box;width: 100%;background-color: transparent;border: 0;outline: 0;}
-    .tx-tj-thumb{border:2px dashed #ebebeb;padding:5px;width: 200px;height: 85px;text-align: center;float: left;}
-    .tx-tj-thumb span{color:green;font-size:16px;width:100%;text-align: center;display: block;margin-top: 5px;}
-    .tx-tj-thumb .tx-tj-thumb-logo{margin-top:13px;}
-/*这个地方使用了伪类 如:before，content就是为了美化标签做的背景，如果不想美化，只用线条，那么这个写空，然后给长宽*/
-	.tx-tj-thumb i{clear: both;}
-	.tx-tj-qt i{display: inline-block;width: 24px;height: 24px;position: relative;}
-    .tx-tj-qt i:before{width: 20px;height: 2px;left: 2px;top: 11px;content: "";display: block;position: absolute;background-color: #43b548;}
-    .tx-tj-qt i:after{width: 2px;height: 20px;left: 11px;top: 2px;content: "";display: block;position: absolute;background-color: #43b548;}
-    .tx-tj-qt .tx-tj-description{float:left;margin-left: 10px;height:100px;width: 500px}
-    .tx-tj-qt .tx-tj-description textarea{height:100%;width:100%;resize:none}
-    .editCard-inner-tip i{clear: both;}
+      .editCard-inner-tip i{clear: both;}
     .editCard-inner-tip i{display: inline-block;width: 48px;height: 48px;position: relative;}
     .editCard-inner-tip i:before{width: 40px;height: 4px;left: 4px;top: 22px;content: "";display: block;position: absolute;background-color: #43b548;}
     .editCard-inner-tip i:after{width: 4px;height: 40px;left: 22px;top: 4px;content: "";display: block;position: absolute;background-color: #43b548;}
-    /*分类*/
-    .tx-tj-category {margin-left:10px;}
-    .tx-tj-category .tx-tj-qt-titile{margin:10px 0;}   
-    #thumb{ height: 100%;
-    width: 100%;
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    left: 0;}             
 </style>
+
 
 </body></html>
 <script type="text/javascript">
-     // 实例化编辑器
-   var ue = UE.getEditor('container',{
-   	initialFrameHeight:300,
-   	autoFloatEnabled:true
 
-   });
+
+     // 实例化编辑器
+   // var ue = UE.getEditor('container',{
+   // 	initialFrameHeight:300,
+   // 	autoFloatEnabled:true
+
+   // });
     
  
  // 
+ 
   var geren =new Vue({
     el:'#geren',
     data:{
@@ -548,7 +492,8 @@
         author:'',
         thumb:'',
         columnId:'',
-        selectedC:''
+        selectedC:'',
+        wenjian:''
 
     },
     mounted: function() {
@@ -558,12 +503,20 @@
         })
     },
   	methods: {
-  		showCard:function() {
-            this.editor =true
-            this.classEditor = 'showC'
+  		// showCard:function() {
+    //         this.editor =true
+    //         this.classEditor = 'showC'
 
            
-  		},
+  		// },
+        toUrl:function(){
+            url ='/index.php?app=web&act=index-toUrl'
+            this.$http.post(url,{wenjian:this.wenjian},{emulateJSON:true}).then(function(res){
+                console.log(res)
+            })
+
+
+        },
         submit:function() {
         url ='/index.php?app=web&act=index-pullArticle'
         var title =this.title; 
