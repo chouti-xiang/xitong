@@ -166,7 +166,7 @@ header .header-stackup{position:fixed;width:100%;top:0;left:0;background:#fff;z-
 .header-tcc-item:last-child{border-bottom:none}
 .header-tool-config .header-tc-content{width:166px;right:-69px;text-align:center}
 .header-tool-config .header-tc-content .header-tc-ct-bg{right:76px}
-.header-tool-user .header-tc-content{width:130px;right:-59px;text-align:center}
+.header-tool-user .header-tc-content{width:130px;right:-59px;text-align:center;display: block;}
 .header-tool-user .header-tc-content .header-tc-ct-bg{right:59px}
 .header-tool-cal .header-tc-content{width:306px;padding:0 24px;line-height:42px;text-align:center;right:-69px}
 .header-tool-cal .header-tc-content .header-tc-ct-bg{right:76px}
@@ -1411,8 +1411,11 @@ a.ibx-cal-dical-timetype:hover{text-decoration:underline}
 	height: 100%;
 	top: 0;
 	left: 0;
+	right: 0;
+	bottom: 0;
 	background:rgba(0,0,0,.6);
 	z-index: 100;
+
 }
 .closeB{
 	position: fixed;

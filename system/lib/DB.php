@@ -264,7 +264,6 @@
  	{
  		return $this->sql;
  	}
-
  	function Jquery($sql)
  	{
  		$rs = $this->getRs($sql);
