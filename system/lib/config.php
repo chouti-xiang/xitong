@@ -5,9 +5,9 @@
 	$_SQL = array(
 		'DBTYPE' =>'mysql',
 		'DBHOST' =>"localhost",
-		'DBUSER' =>'tsaycomcn',
-		'DBPASS' => '123456',
-		'DBNAME' => 'tsaycomcn',
+		'DBUSER' =>'root',
+		'DBPASS' => 'password',
+		'DBNAME' => 'localname',
 		'DBCHARSET' => 'utf8'
 	);
 

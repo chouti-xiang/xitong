@@ -5,8 +5,8 @@ $_SQL = array(
 		'DBTYPE' =>'mysql',
 		'DBHOST' =>"localhost",
 		'DBUSER' =>'root',
-		'DBPASS' => 'pinke123',
-		'DBNAME' => 'olee',
+		'DBPASS' => 'password',
+		'DBNAME' => 'localname',
 		'DBCHARSET' => 'utf8'
 
 	);

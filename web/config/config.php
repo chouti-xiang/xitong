@@ -3,10 +3,10 @@
 	//数据库配置
 $_SQL = array(
 		'DBTYPE' =>'mysql',
-		'DBHOST' =>"123.56.216.78",
+		'DBHOST' =>"localhost",
 		'DBUSER' =>'root',
-		'DBPASS' => 'aisu10',
-		'DBNAME' => 'hangye',
+		'DBPASS' => 'password',
+		'DBNAME' => 'localname',
 		'DBCHARSET' => 'utf8mb4'
 
 	);
